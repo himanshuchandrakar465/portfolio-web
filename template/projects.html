@@ -1,251 +1,1248 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Himanshu Chandrakar</title>
-<meta name="description" content="AI/ML, Deep Learning and Generative AI projects by Himanshu Chandrakar.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f1c'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='%232dd4bf' font-family='monospace'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Projects by Himanshu Chandrakar — AI/ML, Deep Learning, Generative AI, RAG and intelligent systems."
+    />
+    <title>Projects | Himanshu Chandrakar</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<div id="preloader"><div class="pl-mark">&lt;Himanshu<span class="dot">.</span>dev/&gt;</div></div>
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-<!-- ================= NAVBAR ================= -->
-<nav class="site-nav">
-  <div class="container d-flex align-items-center justify-content-between">
-    <a href="index.html" class="brand"><span class="bracket">&lt;</span>Himanshu<span class="dot">.</span>dev<span class="bracket">/&gt;</span></a>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <button class="navbar-toggler navbar-toggler-custom d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span>
-    </button>
+    <style>
+      :root {
+        --bg-main: #090b10;
+        --bg-secondary: #0e1118;
+        --bg-card: rgba(255, 255, 255, 0.04);
+        --text-main: #f5f7fa;
+        --text-secondary: #9ba4b4;
+        --text-muted: #687386;
+        --accent: #36bcf7;
+        --accent-2: #8b5cf6;
+        --success: #3ddc97;
+        --border: rgba(255, 255, 255, 0.08);
+        --radius: 20px;
+        --container-width: 1180px;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
 
-    <div class="collapse navbar-collapse flex-grow-0" id="navMenu">
-      <ul class="navbar-nav align-items-lg-center gap-lg-0 gap-2 py-3 py-lg-0">
-        <li class="nav-item"><a class="nav-link-custom" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link-custom active" href="projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn-glow" href="contact.html"><i class="bi bi-send"></i> Let's talk</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      html {
+        scroll-behavior: smooth;
+      }
 
-<!-- ================= PAGE HERO ================= -->
-<header class="page-hero">
-  <span class="hero-orb o2" style="opacity:.2;"></span>
-  <div class="container">
-    <span class="eyebrow-mono">projects</span>
-    <h1 class="mt-3" style="font-size:clamp(2.1rem,4.5vw,3.2rem); max-width:760px;">Machine learning, deep learning &amp; generative AI, end to end.</h1>
-    <p class="mt-3" style="max-width:560px; font-size:1.05rem;">Seven builds spanning predictive ML, computer vision, GANs and LLM-powered agents — filter by what you're curious about.</p>
-  </div>
-</header>
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--text-main);
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(
+            circle at 12% 8%,
+            rgba(54, 188, 247, 0.08),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 88% 16%,
+            rgba(139, 92, 246, 0.08),
+            transparent 30%
+          ),
+          var(--bg-main);
+      }
 
-<!-- ================= PROJECT GRID ================= -->
-<section class="section pt-3">
-  <div class="container">
+      .custom-container {
+        width: min(92%, var(--container-width));
+        margin: 0 auto;
+      }
 
-    <div class="filter-row" data-reveal>
-      <button class="filter-pill active" data-filter="all">All</button>
-      <button class="filter-pill" data-filter="machine-learning">Machine Learning</button>
-      <button class="filter-pill" data-filter="deep-learning">Deep Learning</button>
-      <button class="filter-pill" data-filter="generative-ai">Generative AI</button>
-      <button class="filter-pill" data-filter="computer-vision">Computer Vision</button>
-      <button class="filter-pill" data-filter="agentic-ai">Agentic AI</button>
-    </div>
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+      .text-accent {
+        color: var(--accent);
+      }
 
-    <div class="row g-4">
+      /* ================= NAVBAR ================= */
+      .custom-navbar {
+        background: rgba(9, 11, 16, 0.78);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        transition: 0.3s ease;
+      }
 
-      <!-- 1. Agentic AI Research Assistant -->
-      <div class="col-lg-4 col-md-6" data-category="generative-ai agentic-ai" data-reveal>
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1750365919878-2735d30fa3d8?auto=format&fit=crop&w=900&q=80" alt="Abstract AI brain concept representing an autonomous research agent" loading="lazy">
+      .navbar-brand {
+        color: #fff !important;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .brand-symbol {
+        color: var(--accent);
+      }
+
+      .navbar-nav .nav-link {
+        color: var(--text-secondary) !important;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: 0.25s ease;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: #fff !important;
+      }
+
+      .navbar-toggler {
+        border-color: var(--border);
+      }
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      /* ================= HERO ================= */
+      .page-hero {
+        padding: 165px 0 90px;
+        text-align: center;
+      }
+
+      .page-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 15px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(54, 188, 247, 0.22);
+        border-radius: 999px;
+        background: rgba(54, 188, 247, 0.06);
+        color: var(--accent);
+        font:
+          13px "JetBrains Mono",
+          monospace;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--success);
+        box-shadow: 0 0 12px rgba(61, 220, 151, 0.8);
+      }
+
+      .page-title {
+        margin-bottom: 22px;
+        font-size: clamp(3.2rem, 8vw, 6.5rem);
+        line-height: 0.95;
+        font-weight: 800;
+        letter-spacing: -5px;
+      }
+
+      .gradient-word {
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          #7dd3fc,
+          var(--accent-2)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .page-description {
+        max-width: 760px;
+        margin: 0 auto;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 17px;
+      }
+
+      #typingText {
+        min-height: 28px;
+        margin-top: 16px;
+        color: var(--accent);
+      }
+
+      /* ================= FILTERS ================= */
+      .section {
+        padding: 95px 0;
+      }
+
+      .section-number {
+        color: var(--accent);
+        margin-bottom: 12px;
+        font:
+          13px "JetBrains Mono",
+          monospace;
+      }
+
+      .section-title {
+        margin-bottom: 15px;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.05;
+        font-weight: 800;
+        letter-spacing: -2px;
+      }
+
+      .section-description {
+        max-width: 720px;
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .filter-btn {
+        padding: 9px 15px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text-secondary);
+        font:
+          12px "JetBrains Mono",
+          monospace;
+        transition: 0.25s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        border-color: rgba(54, 188, 247, 0.38);
+        background: rgba(54, 188, 247, 0.08);
+        color: var(--accent);
+      }
+
+      /* ================= PROJECT CARD ================= */
+      .project-card {
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.015)
+        );
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(54, 188, 247, 0.25);
+        box-shadow: var(--shadow);
+      }
+
+      .project-image-wrap {
+        position: relative;
+        height: 225px;
+        overflow: hidden;
+        background: #11151c;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.72;
+        transform: scale(1.02);
+        transition:
+          transform 0.5s ease,
+          opacity 0.5s ease;
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.08);
+        opacity: 0.9;
+      }
+
+      .image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(9, 11, 16, 0.92),
+          rgba(9, 11, 16, 0.1) 65%,
+          rgba(9, 11, 16, 0.18)
+        );
+      }
+
+      .project-topline {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .project-number,
+      .project-status {
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(9, 11, 16, 0.65);
+        backdrop-filter: blur(10px);
+        color: #d5dbe6;
+        font:
+          11px "JetBrains Mono",
+          monospace;
+      }
+
+      .project-status {
+        color: var(--success);
+      }
+
+      .project-body {
+        padding: 28px;
+      }
+
+      .project-category {
+        margin-bottom: 12px;
+        color: var(--accent);
+        font:
+          11px "JetBrains Mono",
+          monospace;
+        letter-spacing: 0.6px;
+        line-height: 1.6;
+      }
+
+      .project-title {
+        margin-bottom: 12px;
+        font-size: 24px;
+        font-weight: 750;
+      }
+
+      .project-description {
+        min-height: 74px;
+        margin-bottom: 20px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .project-tag {
+        padding: 7px 10px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text-secondary);
+        font:
+          11px "JetBrains Mono",
+          monospace;
+      }
+
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .btn-main,
+      .btn-outline-custom {
+        padding: 11px 16px;
+        border-radius: 11px;
+        font-weight: 700;
+        transition: 0.25s ease;
+      }
+
+      .btn-main {
+        border: 0;
+        background: var(--accent);
+        color: #061017;
+      }
+
+      .btn-main:hover {
+        background: #68cefa;
+        color: #061017;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(54, 188, 247, 0.18);
+      }
+
+      .btn-outline-custom {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+      }
+
+      .btn-outline-custom:hover {
+        border-color: rgba(54, 188, 247, 0.35);
+        color: var(--accent);
+        transform: translateY(-2px);
+      }
+
+      .hidden-project {
+        display: none !important;
+      }
+
+      /* ================= FEATURED ================= */
+      .featured-box {
+        position: relative;
+        overflow: hidden;
+        padding: 42px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background:
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(139, 92, 246, 0.12),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 15% 75%,
+            rgba(54, 188, 247, 0.1),
+            transparent 28%
+          ),
+          rgba(255, 255, 255, 0.025);
+      }
+
+      .featured-box::after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        right: -90px;
+        bottom: -90px;
+        border-radius: 50%;
+        background: rgba(54, 188, 247, 0.08);
+        filter: blur(25px);
+      }
+
+      .featured-kicker {
+        color: var(--accent);
+        margin-bottom: 12px;
+        font:
+          12px "JetBrains Mono",
+          monospace;
+      }
+
+      .featured-title {
+        max-width: 700px;
+        margin-bottom: 15px;
+        font-size: clamp(2.1rem, 4vw, 3.4rem);
+        font-weight: 800;
+        letter-spacing: -1.8px;
+      }
+
+      .featured-copy {
+        max-width: 760px;
+        margin-bottom: 24px;
+        color: var(--text-secondary);
+        line-height: 1.85;
+      }
+
+      .featured-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .featured-point {
+        padding: 9px 12px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        color: #dfe7f2;
+        font-size: 12px;
+      }
+
+      /* ================= MINDSET ================= */
+      .mindset-box {
+        padding: 45px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: radial-gradient(
+          circle at center,
+          rgba(54, 188, 247, 0.07),
+          transparent 62%
+        );
+      }
+
+      .pipeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 30px 0;
+      }
+
+      .pipeline-step {
+        padding: 11px 13px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text-secondary);
+        font:
+          12px "JetBrains Mono",
+          monospace;
+      }
+
+      .pipeline-arrow {
+        color: var(--accent);
+      }
+
+      .mindset-quote {
+        max-width: 790px;
+        margin: auto;
+        text-align: center;
+        font-size: clamp(1.35rem, 3vw, 2rem);
+        line-height: 1.55;
+        font-weight: 650;
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        padding: 50px 0;
+        border-top: 1px solid var(--border);
+        background: var(--bg-secondary);
+      }
+
+      .footer-name {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .footer-text {
+        color: var(--text-muted);
+        font-size: 13px;
+        margin-top: 8px;
+      }
+
+      /* ================= ANIMATION ================= */
+      .reveal {
+        opacity: 0;
+        transform: translateY(25px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 991px) {
+        .page-hero {
+          padding-top: 140px;
+        }
+        .navbar-nav .nav-link {
+          margin-left: 0;
+          padding: 12px 0;
+        }
+        .project-description {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-title {
+          letter-spacing: -3px;
+        }
+        .project-body,
+        .featured-box,
+        .mindset-box {
+          padding: 25px;
+        }
+        .project-image-wrap {
+          height: 195px;
+        }
+        .pipeline-arrow {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+      <div class="container custom-container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <span class="brand-symbol">&lt;</span>
+          Himanshu
+          <span class="brand-symbol">/&gt;</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'projects' %}"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <header class="page-hero">
+      <div class="custom-container">
+        <div class="page-label reveal">
+          <span class="status-dot"></span>
+          SELECTED WORK
+        </div>
+
+        <h1 class="page-title reveal">
+          Things I've <span class="gradient-word">built.</span>
+        </h1>
+
+        <p class="page-description reveal">
+          A collection of my work across Machine Learning, Deep Learning,
+          Generative AI, RAG and AI engineering — from experimentation and
+          training pipelines to real-world applications.
+        </p>
+
+        <div id="typingText" class="mono reveal" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================= PROJECTS ================= -->
+      <section class="section pt-0">
+        <div class="custom-container">
+          <div class="mb-5 reveal">
+            <div class="section-number">01 / PROJECTS</div>
+            <h2 class="section-title">Built to solve real problems.</h2>
+            <p class="section-description">
+              These projects reflect the areas I have been actively working on:
+              end-to-end AI systems, computer vision, Retrieval-Augmented
+              Generation and local AI experimentation.
+            </p>
+
+            <div class="filter-bar" id="filterBar">
+              <button class="filter-btn active" data-filter="all">ALL</button>
+              <button class="filter-btn" data-filter="ai">AI / GENAI</button>
+              <button class="filter-btn" data-filter="rag">RAG / AGENTS</button>
+              <button class="filter-btn" data-filter="vision">
+                COMPUTER VISION
+              </button>
+              <button class="filter-btn" data-filter="local">LOCAL AI</button>
+            </div>
           </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Agentic AI · LangChain, LangGraph, LLM</div>
-            <h3>Agentic AI Research Assistant</h3>
-            <p>A multi-step autonomous agent built with LangGraph for task planning and execution, with tool-calling, memory and retrieval for context-aware decisions across real-world task workflows.</p>
-            <div class="chip-row"><span class="chip">LangGraph</span><span class="chip">Tool Calling</span><span class="chip">Memory</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+
+          <div class="row g-4" id="projectsGrid">
+            <!-- PROJECT 01 -->
+            <div class="col-lg-6 reveal project-item" data-category="ai rag">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=85"
+                    alt="Data analytics dashboard representing an AI news workflow"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_01</span>
+                    <span class="project-status">LIVE</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    STREAMLIT · PINECONE · LANGCHAIN · LANGGRAPH
+                  </div>
+                  <h3 class="project-title">News Brief Desk</h3>
+                  <p class="project-description">
+                    An AI-powered newsroom workflow for gathering, processing
+                    and managing news content with role-based experiences for
+                    reporting, editing and publishing.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">Streamlit</span>
+                    <span class="project-tag">Pinecone</span>
+                    <span class="project-tag">LangChain</span>
+                    <span class="project-tag">LangGraph</span>
+                    <span class="project-tag">LangSmith</span>
+                    <span class="project-tag">Docker</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn-main"
+                      href="https://news-brief-desk.streamlit.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Live Demo <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
+                    <a
+                      class="btn btn-outline-custom"
+                      href="https://github.com/himanshuchandrakar465/News_Brief_Desk_project"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub <i class="bi bi-github ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- PROJECT 02 -->
+            <div class="col-lg-6 reveal project-item" data-category="vision ai">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85"
+                    alt="Computer vision and deep learning hardware"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_02</span>
+                    <span class="project-status">IN DEVELOPMENT</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    DEEP LEARNING · CNN · TENSORFLOW · KERAS
+                  </div>
+                  <h3 class="project-title">Image Super-Resolution</h3>
+                  <p class="project-description">
+                    A deep-learning project focused on reconstructing
+                    higher-quality images from low-resolution inputs, using
+                    convolutional models and DIV2K image data for training and
+                    experimentation.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">CNN</span>
+                    <span class="project-tag">TensorFlow</span>
+                    <span class="project-tag">Keras</span>
+                    <span class="project-tag">OpenCV</span>
+                    <span class="project-tag">DIV2K</span>
+                    <span class="project-tag">Kaggle</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn-outline-custom"
+                      href="{% url 'contact' %}"
+                    >
+                      Discuss Project <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- PROJECT 03 -->
+            <div class="col-lg-6 reveal project-item" data-category="rag ai">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1400&q=85"
+                    alt="Documents and knowledge retrieval workflow"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_03</span>
+                    <span class="project-status">EXPERIMENTAL</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    LANGCHAIN · LANGGRAPH · PINECONE · OLLAMA
+                  </div>
+                  <h3 class="project-title">RAG Documentation Helper</h3>
+                  <p class="project-description">
+                    A Retrieval-Augmented Generation workflow for turning
+                    technical documentation into a searchable knowledge base
+                    with semantic retrieval and local LLM responses.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">RAG</span>
+                    <span class="project-tag">Pinecone</span>
+                    <span class="project-tag">Embeddings</span>
+                    <span class="project-tag">Ollama</span>
+                    <span class="project-tag">Qwen3</span>
+                    <span class="project-tag">LangGraph</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn-outline-custom"
+                      href="{% url 'contact' %}"
+                    >
+                      View Details <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- PROJECT 04 -->
+            <div class="col-lg-6 reveal project-item" data-category="local ai">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1400&q=85"
+                    alt="Local coding and AI development environment"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_04</span>
+                    <span class="project-status">ONGOING</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    OLLAMA · QWEN · PYTORCH · NVIDIA CUDA
+                  </div>
+                  <h3 class="project-title">Local AI Lab</h3>
+                  <p class="project-description">
+                    A hands-on local AI environment for experimenting with LLMs,
+                    inference, GPU acceleration and model tooling, including
+                    Qwen-based workflows and Qwen3-TTS experimentation.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">Ollama</span>
+                    <span class="project-tag">Qwen3</span>
+                    <span class="project-tag">Qwen3-TTS</span>
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">CUDA</span>
+                    <span class="project-tag">WSL</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn-outline-custom"
+                      href="https://github.com/himanshuchandrakar465"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Profile <i class="bi bi-github ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- PROJECT 05 -->
+            <div class="col-lg-6 reveal project-item" data-category="ai">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1400&q=85"
+                    alt="Artificial intelligence neural network concept"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_05</span>
+                    <span class="project-status">LEARNING</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    DEEP LEARNING · TRANSFORMERS · TEXT GENERATION
+                  </div>
+                  <h3 class="project-title">GPT-Style Text Generation Study</h3>
+                  <p class="project-description">
+                    A deep-learning learning track focused on understanding how
+                    decoder-only transformer models generate text, from
+                    tokenization and attention to training and inference
+                    concepts.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">Transformers</span>
+                    <span class="project-tag">Attention</span>
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">Tokenization</span>
+                    <span class="project-tag">LLMs</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a class="btn btn-outline-custom" href="{% url 'about' %}">
+                      About My AI Journey <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- PROJECT 06 -->
+            <div class="col-lg-6 reveal project-item" data-category="vision">
+              <article class="project-card">
+                <div class="project-image-wrap">
+                  <img
+                    class="project-image"
+                    src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1400&q=85"
+                    alt="Green plant used for computer vision classification concept"
+                    loading="lazy"
+                  />
+                  <div class="image-overlay"></div>
+                  <div class="project-topline">
+                    <span class="project-number">PROJECT_06</span>
+                    <span class="project-status">MODEL PROJECT</span>
+                  </div>
+                </div>
+
+                <div class="project-body">
+                  <div class="project-category">
+                    COMPUTER VISION · CNN · TRANSFER LEARNING
+                  </div>
+                  <h3 class="project-title">Plant Disease Detection</h3>
+                  <p class="project-description">
+                    A CNN-based image-classification project for recognizing
+                    plant disease patterns, built around image preprocessing,
+                    resizing, normalization and transfer-learning ideas.
+                  </p>
+
+                  <div class="project-tags">
+                    <span class="project-tag">CNN</span>
+                    <span class="project-tag">TensorFlow</span>
+                    <span class="project-tag">Keras</span>
+                    <span class="project-tag">Transfer Learning</span>
+                    <span class="project-tag">Augmentation</span>
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      class="btn btn-outline-custom"
+                      href="{% url 'contact' %}"
+                    >
+                      Contact Me <i class="bi bi-envelope ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FEATURED PROJECT ================= -->
+      <section class="section pt-0">
+        <div class="custom-container">
+          <div class="featured-box reveal">
+            <div class="featured-kicker">02 / FEATURED BUILD</div>
+            <h2 class="featured-title">
+              Turning AI experiments into
+              <span class="text-accent">usable systems.</span>
+            </h2>
+            <p class="featured-copy">
+              My strongest focus is not only model training. I enjoy connecting
+              preprocessing, retrieval, inference, interfaces, APIs and
+              deployment into one practical workflow. The News Brief Desk is the
+              clearest example of that product-oriented approach.
+            </p>
+
+            <div class="featured-points">
+              <span class="featured-point"
+                ><i class="bi bi-database me-1"></i> Data</span
+              >
+              <span class="featured-point"
+                ><i class="bi bi-search me-1"></i> Retrieval</span
+              >
+              <span class="featured-point"
+                ><i class="bi bi-cpu me-1"></i> Model / LLM</span
+              >
+              <span class="featured-point"
+                ><i class="bi bi-window me-1"></i> Application</span
+              >
+              <span class="featured-point"
+                ><i class="bi bi-cloud-arrow-up me-1"></i> Deployment</span
+              >
+            </div>
+
+            <div class="d-flex flex-wrap gap-3">
+              <a
+                href="https://news-brief-desk.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-main"
+              >
+                Open Live Project <i class="bi bi-arrow-up-right ms-1"></i>
+              </a>
+              <a
+                href="https://github.com/himanshuchandrakar465/News_Brief_Desk_project"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline-custom"
+              >
+                Read Source <i class="bi bi-github ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ENGINEERING MINDSET ================= -->
+      <section class="section pt-0">
+        <div class="custom-container">
+          <div class="mindset-box reveal">
+            <div class="section-number text-center">
+              03 / ENGINEERING MINDSET
+            </div>
+            <h2 class="section-title text-center">
+              I build systems, not just models.
+            </h2>
+
+            <div class="pipeline">
+              <span class="pipeline-step">Data</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Preprocessing</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Model / Retrieval</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Evaluation</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Inference</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Application</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-step">Deployment</span>
+            </div>
+
+            <div class="mindset-quote">
+              “I don't want to stop at a model that works. I want to build
+              <span class="text-accent"
+                >AI systems people can actually use.</span
+              >”
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CTA ================= -->
+      <section class="section pt-0">
+        <div class="custom-container">
+          <div class="featured-box text-center reveal">
+            <div class="featured-kicker">LET'S CONNECT</div>
+            <h2 class="featured-title mx-auto">
+              Let's build something intelligent.
+            </h2>
+            <p class="featured-copy mx-auto">
+              Interested in AI/ML engineering, deep learning, Generative AI, RAG
+              and practical intelligent systems.
+            </p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+              <a
+                href="mailto:himanshuchandrakar465@gmail.com"
+                class="btn btn-main"
+              >
+                <i class="bi bi-envelope me-2"></i>Send me an Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline-custom"
+              >
+                <i class="bi bi-linkedin me-2"></i>LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="custom-container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-6">
+            <div class="footer-name">Himanshu Chandrakar</div>
+            <div class="footer-text">
+              Aspiring AI/ML Engineer · Generative AI · Deep Learning
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-text">
+              © <span id="currentYear"></span> Himanshu Chandrakar
             </div>
           </div>
         </div>
       </div>
+    </footer>
 
-      <!-- 2. RAG Document Q&A -->
-      <div class="col-lg-4 col-md-6" data-category="generative-ai" data-reveal data-reveal-delay="1">
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1660188100972-4f7f9fef60d2?auto=format&fit=crop&w=900&q=80" alt="Shelves of books representing document retrieval for the RAG project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Generative AI · LangChain, Hugging Face</div>
-            <h3>RAG-based Document Q&amp;A System</h3>
-            <p>A retrieval-augmented generation pipeline for accurate document-based Q&amp;A, using vector embeddings and semantic search, designed for real-time queries and easy integration.</p>
-            <div class="chip-row"><span class="chip">RAG</span><span class="chip">Vector Embeddings</span><span class="chip">Semantic Search</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      <!-- 3. Generative AI Book Assistant -->
-      <div class="col-lg-4 col-md-6" data-category="generative-ai" data-reveal data-reveal-delay="2">
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status ongoing"><span class="pulse-dot"></span> Ongoing</span>
-            <img src="https://images.unsplash.com/photo-1671568087843-c164ff4bb42c?auto=format&fit=crop&w=900&q=80" alt="Open book with warm string lights for the generative book assistant project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Generative AI · PyTorch, Hugging Face</div>
-            <h3>Generative AI Book Assistant</h3>
-            <p>An AI assistant that answers queries using the writing characteristics of a specific author — transformer-based text generation with author-style prompting and optimized inference.</p>
-            <div class="chip-row"><span class="chip">Transformers</span><span class="chip">Prompt Workflows</span><span class="chip">Inference Tuning</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <script>
+      /* ================= TYPING EFFECT ================= */
+      const typingElement = document.getElementById("typingText");
+      const typingMessages = [
+        "Machine Learning → Deep Learning",
+        "Generative AI → LLMs → RAG",
+        "Data → Model → Inference → Deployment",
+        "Building real-world AI products 🚀",
+      ];
 
-      <!-- 4. Image-to-Image Generator (GAN) -->
-      <div class="col-lg-4 col-md-6" data-category="generative-ai computer-vision deep-learning" data-reveal>
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1735433833252-2549c1b089c9?auto=format&fit=crop&w=900&q=80" alt="Colorful generative gradient art representing the image-to-image GAN project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">GANs · TensorFlow</div>
-            <h3>Image-to-Image Generator</h3>
-            <p>A generative AI system that transforms sketches into realistic images — generator and discriminator built from scratch, with a complete training and inference pipeline.</p>
-            <div class="chip-row"><span class="chip">GAN from Scratch</span><span class="chip">Image-to-Image</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      let messageIndex = 0;
+      let characterIndex = 0;
+      let deleting = false;
+      const typingSpeed = 58;
+      const deletingSpeed = 32;
+      const pauseAfterTyping = 1500;
 
-      <!-- 5. Image Resolution Enhancer -->
-      <div class="col-lg-4 col-md-6" data-category="deep-learning computer-vision" data-reveal data-reveal-delay="1">
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1617699979206-ed274bb89152?auto=format&fit=crop&w=900&q=80" alt="Close-up of a camera lens representing the super-resolution imaging project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Deep Learning · PyTorch, CNN</div>
-            <h3>Image Resolution Enhancer</h3>
-            <p>A CNN-based super-resolution model that upscales low-res images into high-quality outputs, with a custom architecture with skip connections and perceptual loss for sharper reconstruction.</p>
-            <div class="chip-row"><span class="chip">Super-Resolution</span><span class="chip">Perceptual Loss</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      function typeText() {
+        if (!typingElement) return;
 
-      <!-- 6. Plant Disease Detection -->
-      <div class="col-lg-4 col-md-6" data-category="computer-vision deep-learning" data-reveal data-reveal-delay="2">
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1516280117825-9fb8966b72a7?auto=format&fit=crop&w=900&q=80" alt="Macro photo of a green leaf representing the plant disease detection project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Computer Vision · TensorFlow, Keras</div>
-            <h3>Plant Disease Detection</h3>
-            <p>A CNN-based model for multi-class plant disease classification, using transfer learning and data augmentation to improve generalization across varied leaf conditions.</p>
-            <div class="chip-row"><span class="chip">Transfer Learning</span><span class="chip">Data Augmentation</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        const message = typingMessages[messageIndex];
 
-      <!-- 7. House Rent Prediction -->
-      <div class="col-lg-4 col-md-6" data-category="machine-learning" data-reveal>
-        <div class="model-card">
-          <div class="model-card-media">
-            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
-            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80" alt="Modern house exterior representing the rent prediction project" loading="lazy">
-          </div>
-          <div class="model-card-body">
-            <div class="model-card-cat">Machine Learning · Python, Scikit-learn</div>
-            <h3>House Rent Prediction System</h3>
-            <p>An ML system for predicting rental prices using random forest regression and SVMs, with careful data preprocessing, feature engineering and hyperparameter tuning for a real-time pipeline.</p>
-            <div class="chip-row"><span class="chip">Random Forest</span><span class="chip">Hyperparameter Tuning</span></div>
-            <div class="model-card-links">
-              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        if (!deleting) {
+          characterIndex++;
+          typingElement.textContent = message.slice(0, characterIndex);
 
-    </div>
-  </div>
-</section>
+          if (characterIndex === message.length) {
+            deleting = true;
+            setTimeout(typeText, pauseAfterTyping);
+            return;
+          }
+        } else {
+          characterIndex--;
+          typingElement.textContent = message.slice(0, characterIndex);
 
-<!-- ================= CTA ================= -->
-<section class="section text-center">
-  <div class="container" data-reveal>
-    <span class="eyebrow-mono d-inline-flex mx-auto" style="justify-content:center;">more builds</span>
-    <h2 class="mt-3" style="font-size:clamp(1.7rem,3.6vw,2.4rem);">There's more where that came from.</h2>
-    <div class="hero-cta justify-content-center mt-4">
-      <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener" class="btn-glow"><i class="bi bi-github"></i> Browse GitHub</a>
-      <a href="contact.html" class="btn-outline-glow"><i class="bi bi-envelope"></i> Discuss a project</a>
-    </div>
-  </div>
-</section>
+          if (characterIndex === 0) {
+            deleting = false;
+            messageIndex = (messageIndex + 1) % typingMessages.length;
+          }
+        }
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-md-4">
-        <div class="footer-brand">&lt;Himanshu<span style="color:var(--amber);">.</span>dev/&gt;</div>
-        <p class="mt-2" style="max-width:280px;">Aspiring AI/ML Engineer building intelligent, real-world systems.</p>
-      </div>
-      <div class="col-md-4">
-        <div class="skill-group-title">Navigate</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="skill-group-title">Elsewhere</div>
-        <div class="social-orbit">
-          <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
-        </div>
-      </div>
-    </div>
-    <hr style="border-color:var(--border); margin:2.2rem 0 1.4rem;">
-    <p class="text-center mb-0" style="font-size:.85rem;">© <span data-year></span> Himanshu Chandrakar. Built with Bootstrap, Typed.js &amp; a lot of coffee.</p>
-  </div>
-</footer>
+        setTimeout(typeText, deleting ? deletingSpeed : typingSpeed);
+      }
 
-<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+      typeText();
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+      /* ================= SCROLL REVEAL ================= */
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+
+      /* ================= FILTER PROJECTS ================= */
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const projectItems = document.querySelectorAll(".project-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+
+          filterButtons.forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+
+          projectItems.forEach((item) => {
+            const categories = item.dataset.category.split(" ");
+            const shouldShow = filter === "all" || categories.includes(filter);
+            item.classList.toggle("hidden-project", !shouldShow);
+          });
+        });
+      });
+
+      /* ================= CURRENT YEAR ================= */
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      /* ================= NAVBAR SCROLL ================= */
+      const navbar = document.querySelector(".custom-navbar");
+      window.addEventListener("scroll", () => {
+        navbar.style.background =
+          window.scrollY > 40
+            ? "rgba(9, 11, 16, 0.95)"
+            : "rgba(9, 11, 16, 0.78)";
+      });
+
+      /* ================= CLOSE MOBILE MENU ================= */
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      const navbarMenu = document.getElementById("mainNavbar");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navbarMenu.classList.contains("show")) {
+            const collapse = bootstrap.Collapse.getInstance(navbarMenu);
+            if (collapse) collapse.hide();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

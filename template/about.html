@@ -1,297 +1,1954 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Himanshu Chandrakar</title>
-<meta name="description" content="About Himanshu Chandrakar — background, skills, education and achievements in AI/ML engineering.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f1c'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='%232dd4bf' font-family='monospace'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+  <head>
+    <!-- =========================================================
+         BASIC PAGE SETTINGS
+         ========================================================= -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta charset="UTF-8" />
 
-<div id="preloader"><div class="pl-mark">&lt;Himanshu<span class="dot">.</span>dev/&gt;</div></div>
+    <!-- Makes the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ================= NAVBAR ================= -->
-<nav class="site-nav">
-  <div class="container d-flex align-items-center justify-content-between">
-    <a href="index.html" class="brand"><span class="bracket">&lt;</span>Himanshu<span class="dot">.</span>dev<span class="bracket">/&gt;</span></a>
+    <!-- Browser tab title -->
+    <title>About | Himanshu Chandrakar</title>
 
-    <button class="navbar-toggler navbar-toggler-custom d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span>
-    </button>
+    <!-- Page description -->
+    <meta
+      name="description"
+      content="About Himanshu Chandrakar - Aspiring AI/ML Engineer focused on Machine Learning, Deep Learning, Generative AI and LLM applications."
+    />
 
-    <div class="collapse navbar-collapse flex-grow-0" id="navMenu">
-      <ul class="navbar-nav align-items-lg-center gap-lg-0 gap-2 py-3 py-lg-0">
-        <li class="nav-item"><a class="nav-link-custom" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link-custom active" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link-custom" href="projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn-glow" href="contact.html"><i class="bi bi-send"></i> Let's talk</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- =========================================================
+         BOOTSTRAP CSS
+         ========================================================= -->
 
-<!-- ================= PAGE HERO ================= -->
-<header class="page-hero">
-  <span class="hero-orb o1" style="opacity:.22;"></span>
-  <div class="container">
-    <span class="eyebrow-mono">about</span>
-    <h1 class="mt-3" style="font-size:clamp(2.1rem,4.5vw,3.2rem); max-width:760px;">Hands-on with the full stack behind a model — not just the training loop.</h1>
-  </div>
-</header>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<!-- ================= BIO ================= -->
-<section class="section pt-3">
-  <div class="container">
-    <div class="row gy-5 align-items-start">
-      <div class="col-lg-4" data-reveal>
-        <div class="avatar-frame">
-          <img src="assets/profile.jpg" alt="Portrait of Himanshu Chandrakar">
-          <div class="avatar-badge">B.E. Computer Science <b>BIT Raipur</b></div>
+    <!-- =========================================================
+         BOOTSTRAP ICONS
+         ========================================================= -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- =========================================================
+         GOOGLE FONTS
+         ========================================================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =========================================================
+         CUSTOM CSS
+         ========================================================= -->
+
+    <style>
+      /* =====================================================
+           GLOBAL VARIABLES
+           ===================================================== */
+
+      :root {
+        --bg-main: #090b10;
+
+        --bg-secondary: #0e1118;
+
+        --bg-card: rgba(255, 255, 255, 0.04);
+
+        --text-main: #f5f7fa;
+
+        --text-secondary: #9ba4b4;
+
+        --text-muted: #687386;
+
+        --accent: #36bcf7;
+
+        --accent-2: #8b5cf6;
+
+        --border: rgba(255, 255, 255, 0.08);
+
+        --radius: 20px;
+
+        --container-width: 1180px;
+
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      /* =====================================================
+           GLOBAL BODY
+           ===================================================== */
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+
+        background:
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(54, 188, 247, 0.08),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(139, 92, 246, 0.08),
+            transparent 30%
+          ),
+          var(--bg-main);
+
+        color: var(--text-main);
+
+        font-family: "Inter", sans-serif;
+
+        overflow-x: hidden;
+      }
+
+      /* =====================================================
+           CUSTOM CONTAINER
+           ===================================================== */
+
+      .custom-container {
+        width: min(92%, var(--container-width));
+
+        margin: auto;
+      }
+
+      /* =====================================================
+           MONOSPACE TEXT
+           ===================================================== */
+
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      /* =====================================================
+           NAVBAR
+           ===================================================== */
+
+      .custom-navbar {
+        background: rgba(9, 11, 16, 0.8);
+
+        backdrop-filter: blur(16px);
+
+        border-bottom: 1px solid var(--border);
+
+        transition: 0.3s ease;
+      }
+
+      /* Website logo */
+
+      .navbar-brand {
+        color: white !important;
+
+        font-weight: 800;
+
+        letter-spacing: -0.5px;
+      }
+
+      /* Logo symbols */
+
+      .brand-symbol {
+        color: var(--accent);
+      }
+
+      /* Navigation links */
+
+      .navbar-nav .nav-link {
+        color: var(--text-secondary) !important;
+
+        margin-left: 20px;
+
+        font-weight: 500;
+
+        transition: 0.25s ease;
+      }
+
+      /* Navigation hover */
+
+      .navbar-nav .nav-link:hover {
+        color: white !important;
+      }
+
+      /* Mobile navbar button */
+
+      .navbar-toggler {
+        border-color: var(--border);
+      }
+
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      /* =====================================================
+           PAGE HERO
+           ===================================================== */
+
+      .page-hero {
+        padding: 170px 0 100px;
+
+        text-align: center;
+      }
+
+      /* Small section label */
+
+      .page-label {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 8px 15px;
+
+        border: 1px solid rgba(54, 188, 247, 0.22);
+
+        border-radius: 999px;
+
+        background: rgba(54, 188, 247, 0.06);
+
+        color: var(--accent);
+
+        font-family: "JetBrains Mono", monospace;
+
+        font-size: 13px;
+
+        margin-bottom: 25px;
+      }
+
+      /* Small glowing dot */
+
+      .status-dot {
+        width: 8px;
+
+        height: 8px;
+
+        border-radius: 50%;
+
+        background: #3ddc97;
+
+        box-shadow: 0 0 12px #3ddc97;
+      }
+
+      /* Main About heading */
+
+      .page-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+
+        line-height: 1;
+
+        font-weight: 800;
+
+        letter-spacing: -4px;
+
+        margin-bottom: 25px;
+      }
+
+      /* Gradient word */
+
+      .page-title span {
+        background: linear-gradient(
+          90deg,
+          var(--accent),
+          #7dd3fc,
+          var(--accent-2)
+        );
+
+        -webkit-background-clip: text;
+
+        background-clip: text;
+
+        color: transparent;
+      }
+
+      /* Hero description */
+
+      .page-description {
+        max-width: 750px;
+
+        margin: auto;
+
+        color: var(--text-secondary);
+
+        font-size: 17px;
+
+        line-height: 1.8;
+      }
+
+      /* =====================================================
+           GENERAL SECTION
+           ===================================================== */
+
+      .section {
+        padding: 100px 0;
+      }
+
+      /* Section heading */
+
+      .section-number {
+        color: var(--accent);
+
+        font-family: "JetBrains Mono", monospace;
+
+        font-size: 13px;
+
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+
+        font-weight: 800;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 20px;
+      }
+
+      .section-description {
+        max-width: 720px;
+
+        color: var(--text-secondary);
+
+        line-height: 1.8;
+      }
+
+      /* =====================================================
+           ABOUT INTRO CARD
+           ===================================================== */
+
+      .about-card {
+        padding: 40px;
+
+        height: 100%;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.015)
+        );
+
+        box-shadow: var(--shadow);
+      }
+
+      /* About paragraph */
+
+      .about-text {
+        color: var(--text-secondary);
+
+        line-height: 1.9;
+
+        font-size: 15px;
+
+        margin-bottom: 20px;
+      }
+
+      /* =====================================================
+           CODE CARD
+           ===================================================== */
+
+      .code-card {
+        height: 100%;
+
+        padding: 30px;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: #07090d;
+
+        font-family: "JetBrains Mono", monospace;
+
+        color: #c5d0df;
+
+        overflow-x: auto;
+
+        box-shadow: var(--shadow);
+      }
+
+      .code-comment {
+        color: #667085;
+      }
+
+      .code-keyword {
+        color: #c084fc;
+      }
+
+      .code-variable {
+        color: #67e8f9;
+      }
+
+      .code-string {
+        color: #86efac;
+      }
+
+      /* =====================================================
+           PHILOSOPHY CARD
+           ===================================================== */
+
+      .philosophy-card {
+        padding: 45px;
+
+        text-align: center;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: radial-gradient(
+          circle at center,
+          rgba(54, 188, 247, 0.07),
+          transparent 65%
+        );
+      }
+
+      .philosophy-icon {
+        width: 70px;
+
+        height: 70px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        margin: 0 auto 25px;
+
+        border-radius: 20px;
+
+        background: rgba(54, 188, 247, 0.08);
+
+        color: var(--accent);
+
+        font-size: 30px;
+      }
+
+      .philosophy-title {
+        font-size: 25px;
+
+        font-weight: 700;
+
+        margin-bottom: 15px;
+      }
+
+      .philosophy-text {
+        max-width: 750px;
+
+        margin: auto;
+
+        color: var(--text-secondary);
+
+        line-height: 1.8;
+      }
+
+      /* =====================================================
+           SKILL CARD
+           ===================================================== */
+
+      .skill-card {
+        height: 100%;
+
+        padding: 30px;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: var(--bg-card);
+
+        transition: 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+
+        border-color: rgba(54, 188, 247, 0.25);
+
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .skill-icon {
+        font-size: 28px;
+
+        color: var(--accent);
+
+        margin-bottom: 18px;
+      }
+
+      .skill-card-title {
+        font-size: 19px;
+
+        font-weight: 700;
+
+        margin-bottom: 12px;
+      }
+
+      .skill-card-text {
+        color: var(--text-secondary);
+
+        font-size: 14px;
+
+        line-height: 1.8;
+      }
+
+      /* =====================================================
+           TECHNOLOGY TAGS
+           ===================================================== */
+
+      .tech-tags {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 20px;
+      }
+
+      .tech-tag {
+        padding: 8px 12px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 9px;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        color: var(--text-secondary);
+
+        font-family: "JetBrains Mono", monospace;
+
+        font-size: 12px;
+
+        transition: 0.25s ease;
+      }
+
+      .tech-tag:hover {
+        color: var(--accent);
+
+        border-color: rgba(54, 188, 247, 0.3);
+      }
+
+      /* =====================================================
+           EDUCATION TIMELINE
+           ===================================================== */
+
+      .timeline {
+        position: relative;
+
+        padding-left: 35px;
+      }
+
+      /* Vertical line */
+
+      .timeline::before {
+        content: "";
+
+        position: absolute;
+
+        left: 7px;
+
+        top: 0;
+
+        bottom: 0;
+
+        width: 1px;
+
+        background: linear-gradient(
+          to bottom,
+          var(--accent),
+          var(--accent-2),
+          transparent
+        );
+      }
+
+      /* Timeline item */
+
+      .timeline-item {
+        position: relative;
+
+        margin-bottom: 45px;
+      }
+
+      /* Timeline dot */
+
+      .timeline-item::before {
+        content: "";
+
+        position: absolute;
+
+        left: -35px;
+
+        top: 5px;
+
+        width: 15px;
+
+        height: 15px;
+
+        border-radius: 50%;
+
+        background: var(--bg-main);
+
+        border: 2px solid var(--accent);
+
+        box-shadow: 0 0 15px rgba(54, 188, 247, 0.4);
+      }
+
+      .timeline-year {
+        color: var(--accent);
+
+        font-family: "JetBrains Mono", monospace;
+
+        font-size: 13px;
+
+        margin-bottom: 10px;
+      }
+
+      .timeline-title {
+        font-size: 22px;
+
+        font-weight: 700;
+
+        margin-bottom: 8px;
+      }
+
+      .timeline-text {
+        color: var(--text-secondary);
+
+        line-height: 1.7;
+
+        font-size: 14px;
+      }
+
+      /* =====================================================
+           ACHIEVEMENT CARD
+           ===================================================== */
+
+      .achievement-card {
+        padding: 40px;
+
+        height: 100%;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: linear-gradient(
+          145deg,
+          rgba(54, 188, 247, 0.06),
+          rgba(139, 92, 246, 0.04)
+        );
+      }
+
+      .achievement-icon {
+        font-size: 35px;
+
+        color: var(--accent);
+
+        margin-bottom: 20px;
+      }
+
+      .achievement-title {
+        font-size: 25px;
+
+        font-weight: 700;
+
+        margin-bottom: 10px;
+      }
+
+      .achievement-rank {
+        font-size: 40px;
+
+        font-weight: 800;
+
+        color: var(--accent);
+
+        margin: 15px 0;
+      }
+
+      .achievement-text {
+        color: var(--text-secondary);
+
+        line-height: 1.7;
+      }
+
+      /* =====================================================
+           CERTIFICATION CARD
+           ===================================================== */
+
+      .certification {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 12px;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        color: var(--text-secondary);
+
+        transition: 0.25s ease;
+      }
+
+      .certification:hover {
+        transform: translateX(5px);
+
+        color: white;
+
+        border-color: rgba(54, 188, 247, 0.25);
+      }
+
+      .certification i {
+        color: var(--accent);
+
+        font-size: 20px;
+      }
+
+      /* =====================================================
+           INTERESTS
+           ===================================================== */
+
+      .interest-item {
+        padding: 25px;
+
+        border: 1px solid var(--border);
+
+        border-radius: 15px;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        transition: 0.25s ease;
+      }
+
+      .interest-item:hover {
+        transform: translateY(-4px);
+
+        border-color: rgba(54, 188, 247, 0.25);
+      }
+
+      .interest-item i {
+        color: var(--accent);
+
+        font-size: 24px;
+
+        margin-bottom: 15px;
+      }
+
+      .interest-item h5 {
+        font-weight: 700;
+
+        margin-bottom: 8px;
+      }
+
+      .interest-item p {
+        color: var(--text-secondary);
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        margin: 0;
+      }
+
+      /* =====================================================
+           CTA
+           ===================================================== */
+
+      .cta-card {
+        padding: 60px 35px;
+
+        text-align: center;
+
+        border: 1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background: radial-gradient(
+          circle at center,
+          rgba(54, 188, 247, 0.08),
+          transparent 65%
+        );
+      }
+
+      .cta-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+
+        font-weight: 800;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 15px;
+      }
+
+      .cta-text {
+        color: var(--text-secondary);
+
+        max-width: 650px;
+
+        margin: 0 auto 30px;
+
+        line-height: 1.8;
+      }
+
+      /* =====================================================
+           BUTTONS
+           ===================================================== */
+
+      .btn-main {
+        background: var(--accent);
+
+        color: #061017;
+
+        border: none;
+
+        padding: 13px 22px;
+
+        border-radius: 12px;
+
+        font-weight: 700;
+
+        transition: 0.25s ease;
+      }
+
+      .btn-main:hover {
+        background: #68cefa;
+
+        color: #061017;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 10px 30px rgba(54, 188, 247, 0.2);
+      }
+
+      .btn-outline-custom {
+        border: 1px solid var(--border);
+
+        color: white;
+
+        padding: 13px 22px;
+
+        border-radius: 12px;
+
+        font-weight: 600;
+
+        background: rgba(255, 255, 255, 0.03);
+
+        transition: 0.25s ease;
+      }
+
+      .btn-outline-custom:hover {
+        border-color: rgba(54, 188, 247, 0.4);
+
+        color: var(--accent);
+
+        transform: translateY(-2px);
+      }
+
+      /* =====================================================
+           FOOTER
+           ===================================================== */
+
+      footer {
+        padding: 50px 0;
+
+        border-top: 1px solid var(--border);
+
+        background: var(--bg-secondary);
+      }
+
+      .footer-name {
+        font-size: 20px;
+
+        font-weight: 800;
+      }
+
+      .footer-text {
+        color: var(--text-muted);
+
+        font-size: 13px;
+
+        margin-top: 8px;
+      }
+
+      /* =====================================================
+           SCROLL REVEAL
+           ===================================================== */
+
+      .reveal {
+        opacity: 0;
+
+        transform: translateY(25px);
+
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+
+      /* =====================================================
+           RESPONSIVE DESIGN
+           ===================================================== */
+
+      @media (max-width: 991px) {
+        .page-hero {
+          padding-top: 140px;
+        }
+
+        .navbar-nav .nav-link {
+          margin-left: 0;
+
+          padding: 12px 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-title {
+          letter-spacing: -3px;
+        }
+
+        .about-card,
+        .code-card,
+        .philosophy-card,
+        .achievement-card,
+        .cta-card {
+          padding: 25px;
+        }
+
+        .timeline {
+          padding-left: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================
+         NAVIGATION BAR
+         ========================================================= -->
+
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+      <div class="container custom-container">
+        <!-- Website logo -->
+
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <span class="brand-symbol"> &lt; </span>
+
+          Himanshu
+
+          <span class="brand-symbol"> /&gt; </span>
+        </a>
+
+        <!-- Mobile menu button -->
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation links -->
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="mainNavbar"
+        >
+          <ul class="navbar-nav">
+            <!-- index -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}"> Home </a>
+            </li>
+
+            <!-- About -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}"> About </a>
+            </li>
+
+            <!-- Projects -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'projects' %}"> Projects </a>
+            </li>
+
+            <!-- Contact -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}"> Contact </a>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
 
-      <div class="col-lg-8" data-reveal data-reveal-delay="1">
-        <span class="eyebrow-mono">who I am</span>
-        <h2 class="mt-3">Aspiring AI/ML Engineer, based in Raipur, India</h2>
-        <p class="mt-3" style="font-size:1.05rem; max-width:620px;">I'm an aspiring AI/ML engineer focused on building intelligent applications with Machine Learning, Deep Learning and Generative AI. I enjoy going beyond model training — I like building the system around the model, from data preprocessing and experimentation to inference APIs and workflows that hold up outside a notebook.</p>
-        <p style="max-width:620px;">I hold a B.E. in Computer Science from Bhilai Institute of Technology, Raipur (2021–2025), and I'm currently deepening my work on LLM applications, retrieval-augmented generation and agentic systems.</p>
+    <!-- =========================================================
+         PAGE HERO
+         ========================================================= -->
 
-        <div class="code-block mt-4">
-<span class="kw">class</span> <span class="cls">Himanshu</span>:
-    role = <span class="str">"Aspiring AI/ML Engineer"</span>
-    interests = [
-        <span class="str">"Machine Learning"</span>, <span class="str">"Deep Learning"</span>,
-        <span class="str">"Generative AI"</span>, <span class="str">"LLMs"</span>,
-        <span class="str">"RAG"</span>, <span class="str">"Scalable AI Systems"</span>
-    ]
-    <span class="com"># goal: build AI systems that solve real-world problems</span>
+    <header class="page-hero">
+      <div class="custom-container">
+        <!-- Small label -->
+
+        <div class="page-label reveal">
+          <span class="status-dot"></span>
+
+          GET TO KNOW ME
         </div>
 
-        <div class="row mt-4 g-3">
-          <div class="col-4">
-            <div class="counter-card info-card">
-              <div class="counter-num"><span data-count="7">0</span>+</div>
-              <div class="counter-label">Projects built</div>
+        <!-- Main heading -->
+
+        <h1 class="page-title reveal">
+          About
+          <span> Me. </span>
+        </h1>
+
+        <!-- Introduction -->
+
+        <p class="page-description reveal">
+          I'm Himanshu Chandrakar, an aspiring AI/ML Engineer focused on Machine
+          Learning, Deep Learning, Generative AI, LLM applications and
+          intelligent systems.
+        </p>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         ABOUT ME SECTION
+         ========================================================= -->
+
+    <section class="section pt-0">
+      <div class="custom-container">
+        <div class="row g-4">
+          <!-- =================================================
+                     LEFT SIDE - ABOUT
+                     ================================================= -->
+
+          <div class="col-lg-7 reveal">
+            <div class="about-card">
+              <div class="section-number">01 / WHO I AM</div>
+
+              <h2 class="section-title">
+                I like building the
+                <span class="text-accent"> complete system. </span>
+              </h2>
+
+              <p class="about-text">
+                I'm an aspiring AI/ML Engineer with strong foundations in
+                Machine Learning, Deep Learning and Generative AI.
+              </p>
+
+              <p class="about-text">
+                My interest goes beyond simply training a model. I enjoy
+                understanding the complete workflow — from data preprocessing
+                and experimentation to model development, evaluation, inference
+                and deployment.
+              </p>
+
+              <p class="about-text">
+                I'm particularly interested in scalable AI systems, LLM
+                applications, Retrieval-Augmented Generation, transformer
+                architectures and real-world intelligent products.
+              </p>
             </div>
           </div>
-          <div class="col-4">
-            <div class="counter-card info-card">
-              <div class="counter-num"><span data-count="3">0</span></div>
-              <div class="counter-label">Certifications</div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="counter-card info-card">
-              <div class="counter-num"><span data-count="4">0</span>+</div>
-              <div class="counter-label">DL/GenAI frameworks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= CURRENTLY EXPLORING ================= -->
-<section class="section-tight" style="background:var(--ink-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="container" data-reveal>
-    <span class="eyebrow-mono">right now</span>
-    <h2 class="mt-3" style="font-size:1.6rem;">What I'm currently exploring</h2>
-    <div class="chip-row mt-3">
-      <span class="chip">Large Language Models</span>
-      <span class="chip">Retrieval-Augmented Generation</span>
-      <span class="chip">LangChain · LangGraph · LangSmith</span>
-      <span class="chip">Transformer architectures</span>
-      <span class="chip">GANs &amp; generative models</span>
-      <span class="chip">Inference APIs with FastAPI</span>
-      <span class="chip">Containerized AI apps with Docker</span>
-      <span class="chip">Scalable intelligent systems</span>
-    </div>
-  </div>
-</section>
+          <!-- =================================================
+                     RIGHT SIDE - CODE PROFILE
+                     ================================================= -->
 
-<!-- ================= SKILLS ================= -->
-<section class="section">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow-mono">toolbox</span>
-      <h2>Skills &amp; technologies</h2>
-      <p>Grounded in the fundamentals — data structures, statistics, linear algebra — and applied through the frameworks I use to actually ship models.</p>
-    </div>
+          <div class="col-lg-5 reveal">
+            <div class="code-card">
+              <!-- Code comment -->
 
-    <div class="row g-5">
-      <div class="col-md-6" data-reveal>
-        <div class="skill-group">
-          <div class="skill-group-title">Programming &amp; Fundamentals</div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>Python</span><span>Primary</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>SQL</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>C++ · DSA · OOP</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="78%"></div></div>
-          </div>
-        </div>
+              <div class="code-comment"># About Himanshu</div>
 
-        <div class="skill-group">
-          <div class="skill-group-title">Machine Learning</div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>Scikit-learn</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>Feature Engineering &amp; Evaluation</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="82%"></div></div>
-          </div>
-        </div>
-      </div>
+              <br />
 
-      <div class="col-md-6" data-reveal data-reveal-delay="1">
-        <div class="skill-group">
-          <div class="skill-group-title">Deep Learning</div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>PyTorch</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>TensorFlow / Keras</span><span>Proficient</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>CNNs · RNNs · LSTMs · Transfer Learning</span><span>Applied</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="83%"></div></div>
-          </div>
-        </div>
+              <!-- Class -->
 
-        <div class="skill-group">
-          <div class="skill-group-title">Generative AI</div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>LangChain / LangGraph</span><span>Applied</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-top"><span>Transformers · RAG · GANs</span><span>Applied</span></div>
-            <div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              <div>
+                <span class="code-keyword"> class </span>
 
-<!-- ================= EDUCATION ================= -->
-<section class="section" style="background:var(--ink-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div class="row gy-5">
-      <div class="col-lg-6" data-reveal>
-        <span class="eyebrow-mono">education</span>
-        <h2 class="mt-3" style="font-size:1.6rem;">Academic background</h2>
-        <div class="timeline mt-4">
-          <div class="timeline-item">
-            <div class="timeline-date">2021 — 2025</div>
-            <h4>B.E. in Computer Science</h4>
-            <p>Bhilai Institute of Technology (BIT), Raipur — coursework spanning data structures &amp; algorithms, OOP, and applied mathematics for machine learning.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2025</div>
-            <h4>GATE — Data Science &amp; Artificial Intelligence</h4>
-            <p>All India Rank (AIR): <strong style="color:var(--paper);">14,076</strong></p>
-          </div>
-        </div>
-      </div>
+                Himanshu:
+              </div>
 
-      <div class="col-lg-6" data-reveal data-reveal-delay="1">
-        <span class="eyebrow-mono">certifications</span>
-        <h2 class="mt-3" style="font-size:1.6rem;">Certifications</h2>
-        <div class="row g-3 mt-1">
-          <div class="col-sm-6">
-            <div class="info-card">
-              <div class="icon-wrap"><i class="bi bi-patch-check"></i></div>
-              <h4 style="font-size:1rem;">Machine Learning Certification</h4>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="info-card">
-              <div class="icon-wrap"><i class="bi bi-cpu"></i></div>
-              <h4 style="font-size:1rem;">TensorFlow Certification</h4>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="info-card">
-              <div class="icon-wrap"><i class="bi bi-fire"></i></div>
-              <h4 style="font-size:1rem;">PyTorch Certification</h4>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="info-card">
-              <div class="icon-wrap"><i class="bi bi-trophy"></i></div>
-              <h4 style="font-size:1rem;">GATE 2025 — DS &amp; AI</h4>
+              <br />
+
+              <!-- Role -->
+
+              <div>
+                <span class="code-variable"> role </span>
+
+                =
+
+                <span class="code-string"> "Aspiring AI/ML Engineer" </span>
+              </div>
+
+              <br />
+
+              <!-- Interests -->
+
+              <div>
+                <span class="code-variable"> interests </span>
+
+                = [
+              </div>
+
+              <div class="ms-3">
+                <span class="code-string"> "Machine Learning" </span>,
+              </div>
+
+              <div class="ms-3">
+                <span class="code-string"> "Deep Learning" </span>,
+              </div>
+
+              <div class="ms-3">
+                <span class="code-string"> "Generative AI" </span>,
+              </div>
+
+              <div class="ms-3"><span class="code-string"> "LLMs" </span>,</div>
+
+              <div class="ms-3"><span class="code-string"> "RAG" </span>,</div>
+
+              <div class="ms-3">
+                <span class="code-string"> "Scalable AI Systems" </span>
+              </div>
+
+              <div>]</div>
+
+              <br />
+
+              <!-- Goal -->
+
+              <div>
+                <span class="code-variable"> goal </span>
+
+                =
+
+                <span class="code-string">
+                  "Build AI systems that solve real-world problems"
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ================= CTA ================= -->
-<section class="section text-center">
-  <div class="container" data-reveal>
-    <span class="eyebrow-mono d-inline-flex mx-auto" style="justify-content:center;">résumé</span>
-    <h2 class="mt-3" style="font-size:clamp(1.7rem,3.6vw,2.4rem);">Want the full picture on paper?</h2>
-    <div class="hero-cta justify-content-center mt-4">
-      <a href="assets/Himanshu_Chandrakar_Resume.pdf" download class="btn-glow"><i class="bi bi-download"></i> Download résumé</a>
-      <a href="projects.html" class="btn-outline-glow"><i class="bi bi-grid-1x2"></i> See my projects</a>
-    </div>
-  </div>
-</section>
+    <!-- =========================================================
+         ENGINEERING PHILOSOPHY
+         ========================================================= -->
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-md-4">
-        <div class="footer-brand">&lt;Himanshu<span style="color:var(--amber);">.</span>dev/&gt;</div>
-        <p class="mt-2" style="max-width:280px;">Aspiring AI/ML Engineer building intelligent, real-world systems.</p>
-      </div>
-      <div class="col-md-4">
-        <div class="skill-group-title">Navigate</div>
-        <div class="d-flex flex-column gap-2">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
+    <section class="section">
+      <div class="custom-container">
+        <div class="philosophy-card reveal">
+          <!-- Icon -->
+
+          <div class="philosophy-icon">
+            <i class="bi bi-cpu"></i>
+          </div>
+
+          <!-- Title -->
+
+          <h2 class="philosophy-title">My AI Engineering Mindset</h2>
+
+          <!-- Description -->
+
+          <p class="philosophy-text">
+            I don't want to stop at:
+
+            <strong> "The model achieved 95% accuracy." </strong>
+
+            <br /><br />
+
+            I want to build:
+
+            <strong class="text-accent">
+              "A complete AI system that people can actually use."
+            </strong>
+          </p>
+
+          <!-- AI pipeline -->
+
+          <div class="tech-tags justify-content-center mt-4">
+            <span class="tech-tag"> Data </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> Preprocessing </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> Model </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> Evaluation </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> Inference </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> API </span>
+
+            <span class="tech-tag"> → </span>
+
+            <span class="tech-tag"> Deployment </span>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="skill-group-title">Elsewhere</div>
-        <div class="social-orbit">
-          <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    </section>
+
+    <!-- =========================================================
+         TECHNICAL SKILLS
+         ========================================================= -->
+
+    <section class="section">
+      <div class="custom-container">
+        <!-- Section heading -->
+
+        <div class="mb-5 reveal">
+          <div class="section-number">02 / SKILLS</div>
+
+          <h2 class="section-title">What I work with.</h2>
+
+          <p class="section-description">
+            My technical interests cover traditional machine learning, deep
+            learning, generative AI and AI engineering.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- =================================================
+                     MACHINE LEARNING
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+
+              <h3 class="skill-card-title">Machine Learning</h3>
+
+              <p class="skill-card-text">
+                Building predictive systems using supervised and unsupervised
+                learning, feature engineering and model evaluation.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> Scikit-learn </span>
+
+                <span class="tech-tag"> Supervised Learning </span>
+
+                <span class="tech-tag"> Unsupervised Learning </span>
+
+                <span class="tech-tag"> Feature Engineering </span>
+
+                <span class="tech-tag"> Model Evaluation </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     DEEP LEARNING
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+
+              <h3 class="skill-card-title">Deep Learning</h3>
+
+              <p class="skill-card-text">
+                Developing neural-network based solutions for computer vision
+                and other intelligent applications.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> PyTorch </span>
+
+                <span class="tech-tag"> TensorFlow </span>
+
+                <span class="tech-tag"> Keras </span>
+
+                <span class="tech-tag"> CNNs </span>
+
+                <span class="tech-tag"> RNNs </span>
+
+                <span class="tech-tag"> LSTMs </span>
+
+                <span class="tech-tag"> Transfer Learning </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     GENERATIVE AI
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-stars"></i>
+              </div>
+
+              <h3 class="skill-card-title">Generative AI</h3>
+
+              <p class="skill-card-text">
+                Exploring modern generative AI technologies including GANs,
+                transformers, LLM applications and RAG.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> GANs </span>
+
+                <span class="tech-tag"> DCGAN </span>
+
+                <span class="tech-tag"> Transformers </span>
+
+                <span class="tech-tag"> LLMs </span>
+
+                <span class="tech-tag"> RAG </span>
+
+                <span class="tech-tag"> Prompt Engineering </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     AI FRAMEWORKS
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-braces"></i>
+              </div>
+
+              <h3 class="skill-card-title">AI Frameworks</h3>
+
+              <p class="skill-card-text">
+                Building AI workflows and LLM applications using modern AI
+                frameworks.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> LangChain </span>
+
+                <span class="tech-tag"> LangGraph </span>
+
+                <span class="tech-tag"> LangSmith </span>
+
+                <span class="tech-tag"> Hugging Face </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     PROGRAMMING
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-code-slash"></i>
+              </div>
+
+              <h3 class="skill-card-title">Programming</h3>
+
+              <p class="skill-card-text">
+                Programming foundations for developing machine-learning systems
+                and applications.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> Python </span>
+
+                <span class="tech-tag"> SQL </span>
+
+                <span class="tech-tag"> C++ </span>
+
+                <span class="tech-tag"> OOP </span>
+
+                <span class="tech-tag"> DSA </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =================================================
+                     ENGINEERING
+                     ================================================= -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="skill-card">
+              <div class="skill-icon">
+                <i class="bi bi-box-seam"></i>
+              </div>
+
+              <h3 class="skill-card-title">AI Engineering</h3>
+
+              <p class="skill-card-text">
+                Interested in turning models into usable applications through
+                APIs, version control and deployment.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tech-tag"> Docker </span>
+
+                <span class="tech-tag"> Git </span>
+
+                <span class="tech-tag"> Jupyter </span>
+
+                <span class="tech-tag"> FastAPI </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <hr style="border-color:var(--border); margin:2.2rem 0 1.4rem;">
-    <p class="text-center mb-0" style="font-size:.85rem;">© <span data-year></span> Himanshu Chandrakar. Built with Bootstrap, Typed.js &amp; a lot of coffee.</p>
-  </div>
-</footer>
+    </section>
 
-<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+    <!-- =========================================================
+         AREAS OF INTEREST
+         ========================================================= -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+    <section class="section">
+      <div class="custom-container">
+        <div class="mb-5 reveal">
+          <div class="section-number">03 / INTERESTS</div>
+
+          <h2 class="section-title">Areas I'm exploring.</h2>
+        </div>
+
+        <div class="row g-4">
+          <!-- Machine Learning -->
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="interest-item">
+              <i class="bi bi-bar-chart"></i>
+
+              <h5>Machine Learning</h5>
+
+              <p>
+                Supervised learning, unsupervised learning, feature engineering
+                and model evaluation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Deep Learning -->
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="interest-item">
+              <i class="bi bi-brain"></i>
+
+              <h5>Deep Learning</h5>
+
+              <p>CNNs, RNNs, LSTMs and transfer learning.</p>
+            </div>
+          </div>
+
+          <!-- Generative AI -->
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="interest-item">
+              <i class="bi bi-magic"></i>
+
+              <h5>Generative AI</h5>
+
+              <p>
+                GANs, DCGANs, transformers, LLMs, prompt engineering and RAG.
+              </p>
+            </div>
+          </div>
+
+          <!-- AI Engineering -->
+
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="interest-item">
+              <i class="bi bi-gear"></i>
+
+              <h5>AI Engineering</h5>
+
+              <p>LangChain, LangGraph, LangSmith, APIs and Docker.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         EDUCATION
+         ========================================================= -->
+
+    <section class="section">
+      <div class="custom-container">
+        <div class="mb-5 reveal">
+          <div class="section-number">04 / EDUCATION</div>
+
+          <h2 class="section-title">Academic journey.</h2>
+        </div>
+
+        <div class="timeline">
+          <!-- =================================================
+                     EDUCATION ITEM
+                     ================================================= -->
+
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2021 — 2025</div>
+
+            <h3 class="timeline-title">
+              Bachelor of Engineering in Computer Science
+            </h3>
+
+            <p class="timeline-text">
+              Bhilai Institute of Technology (BIT), Raipur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ACHIEVEMENT
+         ========================================================= -->
+
+    <section class="section">
+      <div class="custom-container">
+        <div class="row g-4">
+          <!-- Achievement -->
+
+          <div class="col-lg-6 reveal">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="bi bi-trophy"></i>
+              </div>
+
+              <h3 class="achievement-title">GATE 2025</h3>
+
+              <p class="achievement-text">
+                Data Science & Artificial Intelligence
+              </p>
+
+              <div class="achievement-rank">AIR 14076</div>
+
+              <p class="achievement-text">
+                All India Rank in GATE 2025 for Data Science and Artificial
+                Intelligence.
+              </p>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+
+          <div class="col-lg-6 reveal">
+            <div class="achievement-card">
+              <div class="achievement-icon">
+                <i class="bi bi-patch-check"></i>
+              </div>
+
+              <h3 class="achievement-title">Certifications</h3>
+
+              <p class="achievement-text mb-4">
+                Certifications related to my machine learning and deep learning
+                journey.
+              </p>
+
+              <!-- Certification 1 -->
+
+              <div class="certification mb-3">
+                <i class="bi bi-check-circle"></i>
+
+                <span> Machine Learning Certification </span>
+              </div>
+
+              <!-- Certification 2 -->
+
+              <div class="certification mb-3">
+                <i class="bi bi-check-circle"></i>
+
+                <span> TensorFlow Certification </span>
+              </div>
+
+              <!-- Certification 3 -->
+
+              <div class="certification">
+                <i class="bi bi-check-circle"></i>
+
+                <span> PyTorch Certification </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CURRENT GOALS
+         ========================================================= -->
+
+    <section class="section">
+      <div class="custom-container">
+        <div class="mb-5 reveal">
+          <div class="section-number">05 / GOALS</div>
+
+          <h2 class="section-title">Where I'm heading.</h2>
+
+          <p class="section-description">
+            My goal is to continue developing the skills required to build
+            production-ready intelligent systems.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Goal 1 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-stars"></i>
+
+              <h5>Generative AI</h5>
+
+              <p>Build production-ready Generative AI applications.</p>
+            </div>
+          </div>
+
+          <!-- Goal 2 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-search"></i>
+
+              <h5>Advanced RAG</h5>
+
+              <p>Develop advanced Retrieval-Augmented Generation systems.</p>
+            </div>
+          </div>
+
+          <!-- Goal 3 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-diagram-3"></i>
+
+              <h5>AI Agents</h5>
+
+              <p>Build intelligent agents and workflows with LangGraph.</p>
+            </div>
+          </div>
+
+          <!-- Goal 4 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-cpu"></i>
+
+              <h5>LLM Applications</h5>
+
+              <p>Improve my understanding of LLM application development.</p>
+            </div>
+          </div>
+
+          <!-- Goal 5 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-diagram-2"></i>
+
+              <h5>Scalable Systems</h5>
+
+              <p>Learn scalable AI system architecture and deployment.</p>
+            </div>
+          </div>
+
+          <!-- Goal 6 -->
+
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="interest-item">
+              <i class="bi bi-github"></i>
+
+              <h5>Open Source</h5>
+
+              <p>Contribute to open-source AI projects and communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CALL TO ACTION
+         ========================================================= -->
+
+    <section class="section">
+      <div class="custom-container">
+        <div class="cta-card reveal">
+          <div class="section-number">LET'S CONNECT</div>
+
+          <h2 class="cta-title">
+            Want to build something
+            <span class="text-accent"> intelligent? </span>
+          </h2>
+
+          <p class="cta-text">
+            I'm interested in Machine Learning, Deep Learning, Generative AI,
+            LLM applications and AI engineering. Let's connect and build
+            something useful.
+          </p>
+
+          <!-- Buttons -->
+
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <!-- Projects -->
+
+            <a href="{% url 'projects' %}" class="btn btn-main">
+              View My Projects
+
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+
+            <!-- Contact -->
+
+            <a href="{% url 'contact' %}" class="btn btn-outline-custom">
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+      <div class="custom-container">
+        <div class="row align-items-center g-4">
+          <!-- Footer name -->
+
+          <div class="col-md-6">
+            <div class="footer-name">Himanshu Chandrakar</div>
+
+            <div class="footer-text">
+              Aspiring AI/ML Engineer · Generative AI · Deep Learning
+            </div>
+          </div>
+
+          <!-- Footer copyright -->
+
+          <div class="col-md-6 text-md-end">
+            <div class="footer-text">
+              ©
+
+              <span id="currentYear"></span>
+
+              Himanshu Chandrakar
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================================
+         BOOTSTRAP JAVASCRIPT
+         ========================================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- =========================================================
+         CUSTOM JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+      /* =====================================================
+           1. CURRENT YEAR
+           ===================================================== */
+
+      /*
+            Automatically gets the current year.
+
+            Example:
+
+            2026
+
+            You don't need to manually update
+            the copyright every year.
+        */
+
+      const currentYear = new Date().getFullYear();
+
+      document.getElementById("currentYear").textContent = currentYear;
+
+      /* =====================================================
+           2. SCROLL REVEAL ANIMATION
+           ===================================================== */
+
+      /*
+            Find all elements that contain:
+
+                class="reveal"
+
+            These elements will animate when they
+            become visible on the screen.
+        */
+
+      const revealElements = document.querySelectorAll(".reveal");
+
+      /*
+            IntersectionObserver checks when
+            an element enters the viewport.
+        */
+
+      const revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            /*
+                                If the element is visible,
+                                add the "show" class.
+                            */
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+
+        {
+          /*
+                        Animation starts when approximately
+                        12% of the element is visible.
+                    */
+
+          threshold: 0.12,
+        },
+      );
+
+      /*
+            Start observing every reveal element.
+        */
+
+      revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+      });
+
+      /* =====================================================
+           3. NAVBAR SCROLL EFFECT
+           ===================================================== */
+
+      /*
+            Get the navbar.
+        */
+
+      const navbar = document.querySelector(".custom-navbar");
+
+      /*
+            Listen for page scrolling.
+        */
+
+      window.addEventListener("scroll", function () {
+        /*
+                    When the user scrolls down,
+                    make the navbar slightly darker.
+                */
+
+        if (window.scrollY > 40) {
+          navbar.style.background = "rgba(9, 11, 16, 0.96)";
+        } else {
+          /*
+                    When the user returns to the top,
+                    restore the original background.
+                */
+          navbar.style.background = "rgba(9, 11, 16, 0.80)";
+        }
+      });
+
+      /* =====================================================
+           4. MOBILE NAVBAR AUTO CLOSE
+           ===================================================== */
+
+      /*
+            Select all navigation links.
+        */
+
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+      /*
+            Get the Bootstrap mobile menu.
+        */
+
+      const navbarMenu = document.getElementById("mainNavbar");
+
+      /*
+            When a link is clicked on mobile,
+            close the navigation menu.
+        */
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          /*
+                            Check whether the mobile
+                            menu is currently open.
+                        */
+
+          if (navbarMenu.classList.contains("show")) {
+            /*
+                                Get the Bootstrap collapse
+                                instance.
+                            */
+
+            const collapse = bootstrap.Collapse.getInstance(navbarMenu);
+
+            /*
+                                Close the menu.
+                            */
+
+            if (collapse) {
+              collapse.hide();
+            }
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

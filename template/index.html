@@ -51,7 +51,7 @@
 
     <!-- =========================================================
          CUSTOM CSS
-         Everything in this project is kept in this one file.
+         Everything in this projects is kept in this one file.
          ========================================================= -->
 
     <style>
@@ -661,10 +661,10 @@
       }
 
       /* =====================================================
-           PROJECT CARD
+           PROJECTS CARD
            ===================================================== */
 
-      .project-card {
+      .projects-card {
         height: 100%;
 
         padding: 32px;
@@ -686,7 +686,7 @@
         overflow: hidden;
       }
 
-      .project-card::before {
+      .projects-card::before {
         content: "";
 
         position: absolute;
@@ -704,7 +704,7 @@
         right: -70px;
       }
 
-      .project-card:hover {
+      .projects-card:hover {
         transform: translateY(-7px);
 
         border-color: rgba(54, 188, 247, 0.25);
@@ -712,7 +712,7 @@
         box-shadow: var(--shadow);
       }
 
-      .project-number {
+      .projects-number {
         font-family: "JetBrains Mono", monospace;
 
         color: var(--accent);
@@ -720,7 +720,7 @@
         font-size: 13px;
       }
 
-      .project-icon {
+      .projects-icon {
         width: 55px;
         height: 55px;
 
@@ -740,7 +740,7 @@
         margin: 25px 0;
       }
 
-      .project-title {
+      .projects-title {
         font-size: 23px;
 
         font-weight: 700;
@@ -748,7 +748,7 @@
         margin-bottom: 10px;
       }
 
-      .project-category {
+      .projects-category {
         color: var(--accent);
 
         font-size: 13px;
@@ -758,7 +758,7 @@
         margin-bottom: 15px;
       }
 
-      .project-description {
+      .projects-description {
         color: var(--text-secondary);
 
         line-height: 1.75;
@@ -768,7 +768,7 @@
         margin-bottom: 25px;
       }
 
-      .project-list {
+      .projects-list {
         padding: 0;
 
         margin: 0;
@@ -779,7 +779,7 @@
         height: 50px;
       }
 
-      .project-list li {
+      .projects-list li {
         color: var(--text-secondary);
 
         font-size: 13px;
@@ -787,7 +787,7 @@
         margin-bottom: 10px;
       }
 
-      .project-list i {
+      .projects-list i {
         color: var(--accent);
 
         margin-right: 8px;
@@ -1024,15 +1024,15 @@
          These links are already prepared for the other pages
          you are going to create:
 
-         about.html
-         project.html
-         contact.html
+         {% url 'about' %}
+         {% url 'projects' %}
+         {% url 'contact' %}
          ========================================================= -->
 
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
       <div class="container custom-container">
         <!-- Website logo/name -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{% url 'index' %}">
           <span class="brand-symbol">&lt;</span>
           Himanshu
           <span class="brand-symbol">/&gt;</span>
@@ -1058,19 +1058,19 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.html"> Home </a>
+              <a class="nav-link" href="{% url 'index' %}"> Home </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="about.html"> About </a>
+              <a class="nav-link" href="{% url 'about' %}"> About </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="project.html"> Projects </a>
+              <a class="nav-link" href="{% url 'projects' %}"> Projects </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="contact.html"> Contact </a>
+              <a class="nav-link" href="{% url 'contact' %}"> Contact </a>
             </li>
           </ul>
         </div>
@@ -1118,12 +1118,12 @@
               <div
                 class="d-flex gap-3 flex-wrap justify-content-lg-start justify-content-center"
               >
-                <a href="project.html" class="btn btn-main">
+                <a href="{% url 'projects' %}" class="btn btn-main">
                   View My Projects
                   <i class="bi bi-arrow-right ms-1"></i>
                 </a>
 
-                <a href="contact.html" class="btn btn-outline-custom">
+                <a href="{% url 'contact' %}" class="btn btn-outline-custom">
                   Contact Me
                 </a>
               </div>
@@ -1543,26 +1543,26 @@
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_01</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECT_01</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-house-door"></i>
                 </div>
 
-                <div class="project-category">
+                <div class="projects-category">
                   MACHINE LEARNING · PYTHON · SCIKIT-LEARN
                 </div>
 
-                <h3 class="project-title">House Rent Prediction</h3>
+                <h3 class="projects-title">House Rent Prediction</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   A machine-learning system designed to predict rental prices
                   using preprocessing, feature engineering and model
                   optimization.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     Random Forest regression
@@ -1596,25 +1596,25 @@
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_02</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECT_02</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-book"></i>
                 </div>
 
-                <div class="project-category">
+                <div class="projects-category">
                   PYTORCH · HUGGING FACE · GENERATIVE AI
                 </div>
 
-                <h3 class="project-title">Generative AI Book Assistant</h3>
+                <h3 class="projects-title">Generative AI Book Assistant</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   An ongoing AI assistant designed around transformer-based
                   language generation and author-style interaction.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     Transformer-based text generation
@@ -1648,25 +1648,25 @@
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_03</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECT_03</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-stars"></i>
                 </div>
 
-                <div class="project-category">
+                <div class="projects-category">
                   GANs · TENSORFLOW · COMPUTER VISION
                 </div>
 
-                <h3 class="project-title">Image-to-Image Generator</h3>
+                <h3 class="projects-title">Image-to-Image Generator</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   A generative AI system that uses a generator and discriminator
                   to transform image inputs into generated outputs.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     Generator + discriminator architecture
@@ -1696,29 +1696,29 @@
             </div>
 
             <!-- =================================================
-                         PROJECT 4
+                         PROJECTS 4
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_04</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECTS_04</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-image"></i>
                 </div>
 
-                <div class="project-category">
+                <div class="projects-category">
                   PYTORCH · CNN · SUPER-RESOLUTION
                 </div>
 
-                <h3 class="project-title">Image Resolution Enhancer</h3>
+                <h3 class="projects-title">Image Resolution Enhancer</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   A deep-learning super-resolution system designed to upscale
                   low-resolution images into higher-quality outputs.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     CNN-based super-resolution
@@ -1748,29 +1748,29 @@
             </div>
 
             <!-- =================================================
-                         PROJECT 5
+                         PROJECTS 5
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_05</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECTS_05</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-file-earmark-text"></i>
                 </div>
 
-                <div class="project-category">
+                <div class="projects-category">
                   LANGCHAIN · HUGGING FACE · RAG
                 </div>
 
-                <h3 class="project-title">RAG Document Q&A</h3>
+                <h3 class="projects-title">RAG Document Q&A</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   A Retrieval-Augmented Generation pipeline for answering
                   questions using information retrieved from documents.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     Vector embeddings
@@ -1800,27 +1800,27 @@
             </div>
 
             <!-- =================================================
-                         PROJECT 6
+                         PROJECTS 6
                          ================================================= -->
 
             <div class="col-lg-6 reveal">
-              <div class="project-card">
-                <div class="project-number">PROJECT_06</div>
+              <div class="projects-card">
+                <div class="projects-number">PROJECTS_06</div>
 
-                <div class="project-icon">
+                <div class="projects-icon">
                   <i class="bi bi-tree"></i>
                 </div>
 
-                <div class="project-category">TENSORFLOW · KERAS · CNN</div>
+                <div class="projects-category">TENSORFLOW · KERAS · CNN</div>
 
-                <h3 class="project-title">Plant Disease Detection</h3>
+                <h3 class="projects-title">Plant Disease Detection</h3>
 
-                <p class="project-description">
+                <p class="projects-description">
                   A computer-vision classification system for detecting plant
                   diseases using convolutional neural networks.
                 </p>
 
-                <ul class="project-list">
+                <ul class="projects-list">
                   <li>
                     <i class="bi bi-check2"></i>
                     CNN-based classification
@@ -1850,9 +1850,9 @@
             </div>
           </div>
 
-          <!-- Link to complete project page -->
+          <!-- Link to complete projects page -->
           <div class="text-center mt-5 reveal">
-            <a href="project.html" class="btn btn-outline-custom">
+            <a href="{% url 'projects' %}" class="btn btn-outline-custom">
               Explore All Projects
               <i class="bi bi-arrow-right ms-2"></i>
             </a>
