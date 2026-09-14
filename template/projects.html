@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Himanshu Chandrakar</title>
+<meta name="description" content="AI/ML, Deep Learning and Generative AI projects by Himanshu Chandrakar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0f1c'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='%232dd4bf' font-family='monospace'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader"><div class="pl-mark">&lt;Himanshu<span class="dot">.</span>dev/&gt;</div></div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="site-nav">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="brand"><span class="bracket">&lt;</span>Himanshu<span class="dot">.</span>dev<span class="bracket">/&gt;</span></a>
+
+    <button class="navbar-toggler navbar-toggler-custom d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+    </button>
+
+    <div class="collapse navbar-collapse flex-grow-0" id="navMenu">
+      <ul class="navbar-nav align-items-lg-center gap-lg-0 gap-2 py-3 py-lg-0">
+        <li class="nav-item"><a class="nav-link-custom" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link-custom" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link-custom active" href="projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link-custom" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn-glow" href="contact.html"><i class="bi bi-send"></i> Let's talk</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= PAGE HERO ================= -->
+<header class="page-hero">
+  <span class="hero-orb o2" style="opacity:.2;"></span>
+  <div class="container">
+    <span class="eyebrow-mono">projects</span>
+    <h1 class="mt-3" style="font-size:clamp(2.1rem,4.5vw,3.2rem); max-width:760px;">Machine learning, deep learning &amp; generative AI, end to end.</h1>
+    <p class="mt-3" style="max-width:560px; font-size:1.05rem;">Seven builds spanning predictive ML, computer vision, GANs and LLM-powered agents — filter by what you're curious about.</p>
+  </div>
+</header>
+
+<!-- ================= PROJECT GRID ================= -->
+<section class="section pt-3">
+  <div class="container">
+
+    <div class="filter-row" data-reveal>
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="machine-learning">Machine Learning</button>
+      <button class="filter-pill" data-filter="deep-learning">Deep Learning</button>
+      <button class="filter-pill" data-filter="generative-ai">Generative AI</button>
+      <button class="filter-pill" data-filter="computer-vision">Computer Vision</button>
+      <button class="filter-pill" data-filter="agentic-ai">Agentic AI</button>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- 1. Agentic AI Research Assistant -->
+      <div class="col-lg-4 col-md-6" data-category="generative-ai agentic-ai" data-reveal>
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1750365919878-2735d30fa3d8?auto=format&fit=crop&w=900&q=80" alt="Abstract AI brain concept representing an autonomous research agent" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Agentic AI · LangChain, LangGraph, LLM</div>
+            <h3>Agentic AI Research Assistant</h3>
+            <p>A multi-step autonomous agent built with LangGraph for task planning and execution, with tool-calling, memory and retrieval for context-aware decisions across real-world task workflows.</p>
+            <div class="chip-row"><span class="chip">LangGraph</span><span class="chip">Tool Calling</span><span class="chip">Memory</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. RAG Document Q&A -->
+      <div class="col-lg-4 col-md-6" data-category="generative-ai" data-reveal data-reveal-delay="1">
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1660188100972-4f7f9fef60d2?auto=format&fit=crop&w=900&q=80" alt="Shelves of books representing document retrieval for the RAG project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Generative AI · LangChain, Hugging Face</div>
+            <h3>RAG-based Document Q&amp;A System</h3>
+            <p>A retrieval-augmented generation pipeline for accurate document-based Q&amp;A, using vector embeddings and semantic search, designed for real-time queries and easy integration.</p>
+            <div class="chip-row"><span class="chip">RAG</span><span class="chip">Vector Embeddings</span><span class="chip">Semantic Search</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Generative AI Book Assistant -->
+      <div class="col-lg-4 col-md-6" data-category="generative-ai" data-reveal data-reveal-delay="2">
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status ongoing"><span class="pulse-dot"></span> Ongoing</span>
+            <img src="https://images.unsplash.com/photo-1671568087843-c164ff4bb42c?auto=format&fit=crop&w=900&q=80" alt="Open book with warm string lights for the generative book assistant project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Generative AI · PyTorch, Hugging Face</div>
+            <h3>Generative AI Book Assistant</h3>
+            <p>An AI assistant that answers queries using the writing characteristics of a specific author — transformer-based text generation with author-style prompting and optimized inference.</p>
+            <div class="chip-row"><span class="chip">Transformers</span><span class="chip">Prompt Workflows</span><span class="chip">Inference Tuning</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Image-to-Image Generator (GAN) -->
+      <div class="col-lg-4 col-md-6" data-category="generative-ai computer-vision deep-learning" data-reveal>
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1735433833252-2549c1b089c9?auto=format&fit=crop&w=900&q=80" alt="Colorful generative gradient art representing the image-to-image GAN project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">GANs · TensorFlow</div>
+            <h3>Image-to-Image Generator</h3>
+            <p>A generative AI system that transforms sketches into realistic images — generator and discriminator built from scratch, with a complete training and inference pipeline.</p>
+            <div class="chip-row"><span class="chip">GAN from Scratch</span><span class="chip">Image-to-Image</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Image Resolution Enhancer -->
+      <div class="col-lg-4 col-md-6" data-category="deep-learning computer-vision" data-reveal data-reveal-delay="1">
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1617699979206-ed274bb89152?auto=format&fit=crop&w=900&q=80" alt="Close-up of a camera lens representing the super-resolution imaging project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Deep Learning · PyTorch, CNN</div>
+            <h3>Image Resolution Enhancer</h3>
+            <p>A CNN-based super-resolution model that upscales low-res images into high-quality outputs, with a custom architecture with skip connections and perceptual loss for sharper reconstruction.</p>
+            <div class="chip-row"><span class="chip">Super-Resolution</span><span class="chip">Perceptual Loss</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Plant Disease Detection -->
+      <div class="col-lg-4 col-md-6" data-category="computer-vision deep-learning" data-reveal data-reveal-delay="2">
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1516280117825-9fb8966b72a7?auto=format&fit=crop&w=900&q=80" alt="Macro photo of a green leaf representing the plant disease detection project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Computer Vision · TensorFlow, Keras</div>
+            <h3>Plant Disease Detection</h3>
+            <p>A CNN-based model for multi-class plant disease classification, using transfer learning and data augmentation to improve generalization across varied leaf conditions.</p>
+            <div class="chip-row"><span class="chip">Transfer Learning</span><span class="chip">Data Augmentation</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. House Rent Prediction -->
+      <div class="col-lg-4 col-md-6" data-category="machine-learning" data-reveal>
+        <div class="model-card">
+          <div class="model-card-media">
+            <span class="model-card-status"><span class="pulse-dot"></span> Completed</span>
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80" alt="Modern house exterior representing the rent prediction project" loading="lazy">
+          </div>
+          <div class="model-card-body">
+            <div class="model-card-cat">Machine Learning · Python, Scikit-learn</div>
+            <h3>House Rent Prediction System</h3>
+            <p>An ML system for predicting rental prices using random forest regression and SVMs, with careful data preprocessing, feature engineering and hyperparameter tuning for a real-time pipeline.</p>
+            <div class="chip-row"><span class="chip">Random Forest</span><span class="chip">Hyperparameter Tuning</span></div>
+            <div class="model-card-links">
+              <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener"><i class="bi bi-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section text-center">
+  <div class="container" data-reveal>
+    <span class="eyebrow-mono d-inline-flex mx-auto" style="justify-content:center;">more builds</span>
+    <h2 class="mt-3" style="font-size:clamp(1.7rem,3.6vw,2.4rem);">There's more where that came from.</h2>
+    <div class="hero-cta justify-content-center mt-4">
+      <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener" class="btn-glow"><i class="bi bi-github"></i> Browse GitHub</a>
+      <a href="contact.html" class="btn-outline-glow"><i class="bi bi-envelope"></i> Discuss a project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-md-4">
+        <div class="footer-brand">&lt;Himanshu<span style="color:var(--amber);">.</span>dev/&gt;</div>
+        <p class="mt-2" style="max-width:280px;">Aspiring AI/ML Engineer building intelligent, real-world systems.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-group-title">Navigate</div>
+        <div class="d-flex flex-column gap-2">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="skill-group-title">Elsewhere</div>
+        <div class="social-orbit">
+          <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr style="border-color:var(--border); margin:2.2rem 0 1.4rem;">
+    <p class="text-center mb-0" style="font-size:.85rem;">© <span data-year></span> Himanshu Chandrakar. Built with Bootstrap, Typed.js &amp; a lot of coffee.</p>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
