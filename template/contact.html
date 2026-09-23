@@ -2,841 +2,123 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Himanshu Chandrakar about AI, machine learning, and generative AI work." />
     <title>Contact | Himanshu Chandrakar</title>
-
-    <meta
-      name="description"
-      content="Contact Himanshu Chandrakar -  AI/ML Engineer focused on Machine Learning, Deep Learning, Generative AI, LLM applications and intelligent systems."
-    />
-
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --bg-main: #090b10;
-        --bg-secondary: #0e1118;
-        --bg-card: rgba(255, 255, 255, 0.04);
-        --text-main: #f5f7fa;
-        --text-secondary: #9ba4b4;
-        --text-muted: #687386;
-        --accent: #36bcf7;
-        --accent-2: #8b5cf6;
-        --border: rgba(255, 255, 255, 0.08);
-        --radius: 20px;
-        --container-width: 1180px;
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        color: var(--text-main);
-        font-family: "Inter", sans-serif;
-        overflow-x: hidden;
-        background:
-          radial-gradient(
-            circle at 10% 10%,
-            rgba(54, 188, 247, 0.08),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at 90% 20%,
-            rgba(139, 92, 246, 0.08),
-            transparent 30%
-          ),
-          var(--bg-main);
-      }
-
-      .custom-container {
-        width: min(92%, var(--container-width));
-        margin: auto;
-      }
-
-      .mono {
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .text-accent {
-        color: var(--accent);
-      }
-
-      /* Navbar */
-      .custom-navbar {
-        background: rgba(9, 11, 16, 0.8);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--border);
-        transition: 0.3s ease;
-      }
-
-      .navbar-brand {
-        color: white !important;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-      }
-
-      .brand-symbol {
-        color: var(--accent);
-      }
-
-      .navbar-nav .nav-link {
-        color: var(--text-secondary) !important;
-        margin-left: 20px;
-        font-weight: 500;
-        transition: 0.25s ease;
-      }
-
-      .navbar-nav .nav-link:hover,
-      .navbar-nav .nav-link.active {
-        color: white !important;
-      }
-
-      .navbar-toggler {
-        border-color: var(--border);
-      }
-
-      .navbar-toggler-icon {
-        filter: invert(1);
-      }
-
-      /* Hero */
-      .page-hero {
-        padding: 170px 0 85px;
-        text-align: center;
-      }
-
-      .page-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 8px 15px;
-        border: 1px solid rgba(54, 188, 247, 0.22);
-        border-radius: 999px;
-        background: rgba(54, 188, 247, 0.06);
-        color: var(--accent);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        margin-bottom: 25px;
-      }
-
-      .status-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #3ddc97;
-        box-shadow: 0 0 12px #3ddc97;
-      }
-
-      .page-title {
-        font-size: clamp(3rem, 8vw, 6rem);
-        line-height: 1;
-        font-weight: 800;
-        letter-spacing: -4px;
-        margin-bottom: 25px;
-      }
-
-      .page-title span {
-        background: linear-gradient(
-          90deg,
-          var(--accent),
-          #7dd3fc,
-          var(--accent-2)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .page-description {
-        max-width: 760px;
-        margin: auto;
-        color: var(--text-secondary);
-        font-size: 17px;
-        line-height: 1.8;
-      }
-
-      /* Main sections */
-      .section {
-        padding: 85px 0;
-      }
-
-      .section-number {
-        color: var(--accent);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 13px;
-        margin-bottom: 12px;
-      }
-
-      .section-title {
-        font-size: clamp(2.2rem, 5vw, 4rem);
-        font-weight: 800;
-        letter-spacing: -2px;
-        margin-bottom: 18px;
-      }
-
-      .section-description {
-        color: var(--text-secondary);
-        line-height: 1.8;
-      }
-
-      /* Contact cards */
-      .contact-card {
-        height: 100%;
-        padding: 34px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: linear-gradient(
-          145deg,
-          rgba(255, 255, 255, 0.05),
-          rgba(255, 255, 255, 0.015)
-        );
-        box-shadow: var(--shadow);
-        transition: 0.3s ease;
-      }
-
-      .contact-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(54, 188, 247, 0.25);
-      }
-
-      .contact-icon {
-        width: 58px;
-        height: 58px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 16px;
-        background: rgba(54, 188, 247, 0.08);
-        color: var(--accent);
-        font-size: 26px;
-        margin-bottom: 20px;
-      }
-
-      .contact-title {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 8px;
-      }
-
-      .contact-text {
-        color: var(--text-secondary);
-        line-height: 1.75;
-        font-size: 14px;
-        margin-bottom: 18px;
-      }
-
-      .contact-link {
-        color: white;
-        text-decoration: none;
-        word-break: break-word;
-        transition: 0.25s ease;
-      }
-
-      .contact-link:hover {
-        color: var(--accent);
-      }
-
-      /* Form */
-      .form-card {
-        padding: 38px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.025);
-      }
-
-      .form-label {
-        color: #d6dbe3;
-        font-weight: 600;
-        font-size: 14px;
-        margin-bottom: 8px;
-      }
-
-      .form-control,
-      .form-control:focus {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
-        color: white;
-        box-shadow: none;
-      }
-
-      .form-control::placeholder {
-        color: #5f6a7a;
-      }
-
-      .form-control:focus {
-        border-color: rgba(54, 188, 247, 0.4);
-      }
-
-      textarea.form-control {
-        min-height: 170px;
-        resize: vertical;
-      }
-
-      .btn-main {
-        background: var(--accent);
-        color: #061017;
-        border: none;
-        padding: 13px 22px;
-        border-radius: 12px;
-        font-weight: 700;
-        transition: 0.25s ease;
-      }
-
-      .btn-main:hover {
-        background: #68cefa;
-        color: #061017;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(54, 188, 247, 0.2);
-      }
-
-      .btn-outline-custom {
-        border: 1px solid var(--border);
-        color: white;
-        padding: 13px 22px;
-        border-radius: 12px;
-        font-weight: 600;
-        background: rgba(255, 255, 255, 0.03);
-        transition: 0.25s ease;
-      }
-
-      .btn-outline-custom:hover {
-        border-color: rgba(54, 188, 247, 0.4);
-        color: var(--accent);
-        transform: translateY(-2px);
-      }
-
-      /* Availability */
-      .availability-box {
-        padding: 30px;
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        background:
-          radial-gradient(
-            circle at 15% 50%,
-            rgba(54, 188, 247, 0.09),
-            transparent 35%
-          ),
-          rgba(255, 255, 255, 0.025);
-      }
-
-      .availability-title {
-        font-size: 21px;
-        font-weight: 700;
-        margin-bottom: 9px;
-      }
-
-      .availability-text {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        margin-bottom: 0;
-      }
-
-      /* Social links */
-      .social-links {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .social-link {
-        width: 46px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        color: var(--text-secondary);
-        background: rgba(255, 255, 255, 0.03);
-        font-size: 20px;
-        transition: 0.25s ease;
-      }
-
-      .social-link:hover {
-        color: var(--accent);
-        border-color: rgba(54, 188, 247, 0.35);
-        transform: translateY(-3px);
-      }
-
-      /* Footer */
-      footer {
-        padding: 50px 0;
-        border-top: 1px solid var(--border);
-        background: var(--bg-secondary);
-      }
-
-      .footer-name {
-        font-size: 20px;
-        font-weight: 800;
-      }
-
-      .footer-text {
-        color: var(--text-muted);
-        font-size: 13px;
-        margin-top: 8px;
-      }
-
-      /* Reveal */
-      .reveal {
-        opacity: 0;
-        transform: translateY(25px);
-        transition:
-          opacity 0.8s ease,
-          transform 0.8s ease;
-      }
-
-      .reveal.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (max-width: 991px) {
-        .page-hero {
-          padding-top: 145px;
-        }
-
-        .navbar-nav .nav-link {
-          margin-left: 0;
-          padding: 12px 0;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .page-title {
-          letter-spacing: -3px;
-        }
-
-        .contact-card,
-        .form-card,
-        .availability-box {
-          padding: 25px;
-        }
-      }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="{% static 'css/portfolio.css' %}" rel="stylesheet" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("portfolio-theme");
+        document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      })();
+    </script>
   </head>
-
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
-      <div class="container custom-container">
-        <a class="navbar-brand" href="{% url 'index' %}">
-          <span class="brand-symbol">&lt;</span>
-          Himanshu
-          <span class="brand-symbol">/&gt;</span>
-        </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNavbar"
-          aria-controls="mainNavbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="mainNavbar"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'projects' %}">Projects</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
-            </li>
-          </ul>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container">
+          <a class="brand" href="{% url 'index' %}" aria-label="Himanshu Chandrakar home"><span class="brand-mark" aria-hidden="true">HC</span> Himanshu Chandrakar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation" aria-controls="siteNavigation" aria-expanded="false" aria-label="Open navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse justify-content-end" id="siteNavigation">
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact</a></li>
+              <li class="nav-item ms-lg-2"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark mode"><i class="bi bi-moon-stars-fill" aria-hidden="true"></i><span>Dark</span></button></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     <main>
-      <!-- Hero -->
-      <header class="page-hero">
-        <div class="custom-container">
-          <div class="page-label reveal">
-            <span class="status-dot"></span>
-            LET'S CONNECT
-          </div>
-
-          <h1 class="page-title reveal">
-            Contact
-            <span> Me.</span>
-          </h1>
-
-          <p class="page-description reveal">
-            Have an opportunity, project idea, collaboration or just want to
-            talk about AI? I'd be happy to connect and hear from you.
-          </p>
-        </div>
-      </header>
-
-      <!-- Contact Information -->
-      <section class="section pt-0">
-        <div class="custom-container">
-          <div class="row g-4">
-            <div class="col-lg-4 reveal">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-envelope"></i>
-                </div>
-
-                <h2 class="contact-title">Email</h2>
-
-                <p class="contact-text">
-                  The best way to reach me for job opportunities, collaborations
-                  and professional discussions.
-                </p>
-
-                <a
-                  href="mailto:himanshuchandrakar465@gmail.com"
-                  class="contact-link"
-                >
-                  himanshuchandrakar465@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 reveal">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-linkedin"></i>
-                </div>
-
-                <h2 class="contact-title">LinkedIn</h2>
-
-                <p class="contact-text">
-                  Connect with me professionally and follow my journey in AI/ML,
-                  Deep Learning and Generative AI.
-                </p>
-
-                <a
-                  href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link"
-                >
-                  View LinkedIn Profile
-                  <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 reveal">
-              <div class="contact-card">
-                <div class="contact-icon">
-                  <i class="bi bi-github"></i>
-                </div>
-
-                <h2 class="contact-title">GitHub</h2>
-
-                <p class="contact-text">
-                  Explore my projects, experiments and code related to
-                  intelligent systems and AI engineering.
-                </p>
-
-                <a
-                  href="https://github.com/himanshuchandrakar465"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link"
-                >
-                  Visit GitHub
-                  <i class="bi bi-arrow-up-right ms-1"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+      <section class="page-intro">
+        <div class="container">
+          <div class="eyebrow">Contact</div>
+          <h1 class="mt-3">Have an idea worth exploring?</h1>
+          <p class="mt-3 mb-0">I’d be glad to hear about an AI, ML, or generative AI project, learning opportunity, or thoughtful collaboration.</p>
         </div>
       </section>
 
-      <!-- Main Contact Area -->
       <section class="section">
-        <div class="custom-container">
-          <div class="row g-5 align-items-start">
-            <!-- Left -->
-            <div class="col-lg-5 reveal">
-              <div class="section-number">01 / GET IN TOUCH</div>
-
-              <h2 class="section-title">
-                Let's build something
-                <span class="text-accent"> useful.</span>
-              </h2>
-
-              <p class="section-description mb-4">
-                I'm interested in opportunities where I can work with Machine
-                Learning, Deep Learning, Generative AI, LLMs, RAG and real-world
-                intelligent systems.
-              </p>
-
-              <div class="availability-box mb-4">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                  <span class="status-dot"></span>
-                  <span class="mono text-accent">OPEN TO OPPORTUNITIES</span>
-                </div>
-
-                <h3 class="availability-title">AI / ML opportunities</h3>
-
-                <p class="availability-text">
-                  Looking for opportunities to learn, build and contribute to
-                  meaningful AI products and engineering teams.
-                </p>
-              </div>
-
-              <div class="social-links">
-                <a
-                  href="https://github.com/himanshuchandrakar465"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-link"
-                  aria-label="GitHub"
-                >
-                  <i class="bi bi-github"></i>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="social-link"
-                  aria-label="LinkedIn"
-                >
-                  <i class="bi bi-linkedin"></i>
-                </a>
-
-                <a
-                  href="mailto:himanshuchandrakar465@gmail.com"
-                  class="social-link"
-                  aria-label="Email"
-                >
-                  <i class="bi bi-envelope"></i>
-                </a>
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="contact-card" data-reveal>
+                <span class="contact-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                <h2>Email is best</h2>
+                <p>For a detailed question or collaboration idea, send a note directly.</p>
+                <a href="mailto:himanshuchandrakar465@gmail.com">himanshuchandrakar465@gmail.com</a>
               </div>
             </div>
-
-            <!-- Right -->
-            <div class="col-lg-7 reveal">
-              <div class="form-card">
-                <div class="section-number">02 / SEND A MESSAGE</div>
-
-                <h2 class="h3 fw-bold mb-4">Tell me about your idea.</h2>
-
-                <!--
-                  This form is front-end only.
-                  Connect it to your Django view later.
-                -->
-                <form id="contactForm" method="post" action="">
-                  {% csrf_token %}
-
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="name" class="form-label">Name</label>
-                      <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-md-6">
-                      <label for="email" class="form-label">Email</label>
-                      <input
-                        type="email"
-                        class="form-control form-control-lg"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <label for="subject" class="form-label">Subject</label>
-                      <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        id="subject"
-                        name="subject"
-                        placeholder="Job opportunity / collaboration / project"
-                        required
-                      />
-                    </div>
-
-                    <div class="col-12">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea
-                        class="form-control form-control-lg"
-                        id="message"
-                        name="message"
-                        placeholder="Write your message here..."
-                        required
-                      ></textarea>
-                    </div>
-
-                    <div class="col-12 d-flex gap-3 flex-wrap pt-2">
-                      <button type="submit" class="btn btn-main">
-                        Send Message
-                        <i class="bi bi-send ms-1"></i>
-                      </button>
-
-                      <a
-                        href="mailto:himanshuchandrakar465@gmail.com"
-                        class="btn btn-outline-custom"
-                      >
-                        Email Directly
-                      </a>
-                    </div>
-                  </div>
-                </form>
-
-                <div
-                  id="formMessage"
-                  class="mt-4 d-none"
-                  aria-live="polite"
-                ></div>
+            <div class="col-lg-4">
+              <div class="contact-card" data-reveal>
+                <span class="contact-icon"><i class="bi bi-linkedin" aria-hidden="true"></i></span>
+                <h2>Professional network</h2>
+                <p>Connect on LinkedIn to follow my work and continue the conversation.</p>
+                <a href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener noreferrer">Open LinkedIn <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="contact-card" data-reveal>
+                <span class="contact-icon"><i class="bi bi-github" aria-hidden="true"></i></span>
+                <h2>Code &amp; experiments</h2>
+                <p>Find project repositories and ongoing learning work on GitHub.</p>
+                <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener noreferrer">Visit GitHub <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Closing CTA -->
-      <section class="section pt-0">
-        <div class="custom-container">
-          <div class="availability-box text-center reveal">
-            <div class="section-number">03 / FINAL NOTE</div>
+          <div class="row justify-content-center mt-5">
+            <div class="col-lg-9" data-reveal>
+              <form class="contact-form needs-validation" data-contact-form novalidate>
+                <div class="eyebrow">Write a message</div>
+                <h2 class="section-heading mt-3">Let’s start with the context.</h2>
+                <p class="mb-4">Submitting this form opens your email app with the message prepared. Nothing is stored on this website.</p>
 
-            <h2 class="section-title mb-3">
-              One conversation can become
-              <span class="text-accent"> something useful.</span>
-            </h2>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="contact-name">Your name</label>
+                    <input class="form-control" id="contact-name" name="name" type="text" autocomplete="name" required />
+                    <div class="invalid-feedback">Please add your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="contact-email">Email address</label>
+                    <input class="form-control" id="contact-email" name="email" type="email" autocomplete="email" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="contact-subject">Subject <span class="text-muted fw-normal">(optional)</span></label>
+                    <input class="form-control" id="contact-subject" name="subject" type="text" placeholder="For example: project collaboration" />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="contact-message">Message</label>
+                    <textarea class="form-control" id="contact-message" name="message" rows="6" required></textarea>
+                    <div class="invalid-feedback">Please write a short message.</div>
+                  </div>
+                </div>
 
-            <p
-              class="section-description mx-auto mb-4"
-              style="max-width: 720px"
-            >
-              Whether it is an AI/ML role, a technical collaboration or an
-              interesting problem to solve, feel free to reach out.
-            </p>
-
-            <a
-              href="mailto:himanshuchandrakar465@gmail.com"
-              class="btn btn-main"
-            >
-              Start a Conversation
-              <i class="bi bi-arrow-right ms-1"></i>
-            </a>
+                <button class="btn-primary-custom mt-4" type="submit">Prepare email <i class="bi bi-send" aria-hidden="true"></i></button>
+                <p class="form-success mb-0" data-form-success><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Your email application should now be open with your message ready to send.</p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-      <div class="custom-container">
-        <div
-          class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"
-        >
-          <div>
-            <div class="footer-name">
-              Himanshu
-              <span class="brand-symbol">/&gt;</span>
-            </div>
-
-            <div class="footer-text">
-              AI/ML Engineer — building intelligent systems.
-            </div>
-          </div>
-
-          <div class="footer-text">
-            © <span id="year"></span> Himanshu Chandrakar
-          </div>
-        </div>
+    <footer class="site-footer">
+      <div class="container d-md-flex justify-content-between align-items-center">
+        <div><a class="brand" href="{% url 'index' %}"><span class="brand-mark" aria-hidden="true">HC</span> Himanshu Chandrakar</a><p class="footer-note mb-0 mt-2">AI/ML engineering · Generative AI · Deep learning</p></div>
+        <div class="footer-links"><a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a><a href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"><i class="bi bi-envelope" aria-hidden="true"></i></a></div>
       </div>
+      <div class="container"><p class="footer-note mb-0 mt-3">© <span data-current-year></span> Himanshu Chandrakar.</p></div>
     </footer>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      // Scroll reveal
-      const revealElements = document.querySelectorAll(".reveal");
-
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12,
-        },
-      );
-
-      revealElements.forEach((element) => {
-        revealObserver.observe(element);
-      });
-
-      // Footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Front-end form feedback
-      const contactForm = document.getElementById("contactForm");
-      const formMessage = document.getElementById("formMessage");
-
-      contactForm.addEventListener("submit", (event) => {
-        /*
-          Remove this preventDefault() when you connect the form
-          to your Django POST endpoint.
-        */
-        event.preventDefault();
-
-        formMessage.classList.remove("d-none");
-        formMessage.className = "mt-4 alert alert-info border-0";
-        formMessage.innerHTML =
-          "Your message is ready to send. Connect this form to your Django view to process submissions.";
-      });
-    </script>
+    <script src="{% static 'js/portfolio.js' %}"></script>
   </body>
 </html>

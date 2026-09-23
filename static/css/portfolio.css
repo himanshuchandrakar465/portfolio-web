@@ -1,0 +1,1270 @@
+/*
+  Himanshu Chandrakar portfolio
+  -----------------------------
+  A small, shared design system for every page. Keeping the visual rules here
+  makes the templates easier to read and means a future design change happens
+  in one place.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* Light mode is the default. These semantic tokens take inspiration from
+   GitHub's Primer system: neutral surfaces, clear blue links, green actions,
+   and the same visual roles in both colour modes. */
+:root {
+  --canvas       : #f7f5f1;
+  --canvas-alt   : #eeebe5;
+  --surface      : #ffffff;
+  --surface-muted: #f1eee8;
+  --ink          : #17283b;
+  --ink-soft     : #3f5062;
+  --muted        : #687587;
+  --line         : #dcd8d0;
+  --navy         : #1f4668;
+  --navy-deep    : #172f48;
+  --teal         : #167b79;
+  --teal-soft    : #dceeea;
+  --coral        : #c85d45;
+  --coral-dark   : #a94733;
+  --coral-soft   : #f6e3dc;
+  --shadow       : 0 18px 45px rgba(23, 40, 59, 0.09);
+  --shadow-small : 0 8px 20px rgba(23, 40, 59, 0.07);
+  --radius       : 1.25rem;
+  --font-body    : "Manrope", sans-serif;
+  --font-mono    : "DM Mono", monospace;
+}
+
+/* Dark mode changes the luminance of every role rather than simply inverting
+   the page. That keeps borders, code panels, and status colours legible. */
+[data-theme="dark"] {
+  --canvas       : #121d2a;
+  --canvas-alt   : #172534;
+  --surface      : #1b2a39;
+  --surface-muted: #223444;
+  --ink          : #f4f0e9;
+  --ink-soft     : #d3dbe1;
+  --muted        : #a8b5bf;
+  --line         : #304354;
+  --navy         : #9ec5df;
+  --navy-deep    : #d6e9f6;
+  --teal         : #7fd0c4;
+  --teal-soft    : #203d42;
+  --coral        : #ef9b83;
+  --coral-dark   : #ffb098;
+  --coral-soft   : #422d2c;
+  --shadow       : 0 18px 48px rgba(0, 0, 0, 0.25);
+  --shadow-small : 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* Base and accessible defaults */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background : var(--canvas);
+  color      : var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x : hidden;
+  transition : background-color 180ms ease, color 180ms ease;
+}
+
+body::selection {
+  background: var(--teal);
+  color     : #fff;
+}
+
+
+a {
+  color                    : var(--navy);
+  text-decoration-thickness: 1px;
+  text-underline-offset    : 0.18em;
+}
+
+a:hover {
+  color: var(--coral-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color         : var(--ink);
+  font-weight   : 800;
+  letter-spacing: -0.04em;
+}
+
+p {
+  color: var(--ink-soft);
+}
+
+:focus-visible {
+  outline       : 3px solid var(--coral);
+  outline-offset: 3px;
+}
+
+/* Shared navigation */
+.site-header {
+  background     : color-mix(in srgb, var(--canvas) 88%, transparent);
+  border-bottom  : 1px solid transparent;
+  backdrop-filter: blur(14px);
+  position       : sticky;
+  top            : 0;
+  transition     : border-color 180ms ease, box-shadow 180ms ease;
+  z-index        : 1030;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--line);
+  box-shadow         : 0 5px 18px rgba(23, 40, 59, 0.04);
+}
+
+.navbar {
+  min-height: 5rem;
+}
+
+.brand {
+  align-items    : center;
+  color          : var(--ink) !important;
+  display        : inline-flex;
+  font-size      : 1rem;
+  font-weight    : 800;
+  gap            : 0.5rem;
+  letter-spacing : -0.035em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  align-items    : center;
+  background     : var(--navy);
+  border-radius  : 0.55rem;
+  color          : #fff;
+  display        : inline-flex;
+  font-family    : var(--font-mono);
+  font-size      : 0.72rem;
+  font-weight    : 500;
+  height         : 1.85rem;
+  justify-content: center;
+  letter-spacing : 0;
+  width          : 1.85rem;
+}
+
+.nav-link {
+  color          : var(--ink-soft) !important;
+  font-size      : 0.92rem;
+  font-weight    : 700;
+  padding        : 0.55rem 0.8rem !important;
+  position       : relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  background      : var(--coral);
+  border-radius   : 1rem;
+  bottom          : 0.28rem;
+  content         : "";
+  height          : 2px;
+  left            : 0.8rem;
+  position        : absolute;
+  transform       : scaleX(0);
+  transform-origin: left;
+  transition      : transform 180ms ease;
+  width           : calc(100% - 1.6rem);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--ink) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler {
+  border-color: var(--line);
+  color       : var(--ink);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem var(--coral-soft);
+}
+
+/* Theme control: the label and icon change together in JavaScript. */
+.theme-toggle {
+  align-items  : center;
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: 999px;
+  color        : var(--ink);
+  display      : inline-flex;
+  font-size    : 0.82rem;
+  font-weight  : 800;
+  gap          : 0.45rem;
+  padding      : 0.48rem 0.76rem;
+  transition   : background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background  : var(--coral-soft);
+  border-color: var(--coral);
+  transform   : translateY(-1px);
+}
+
+/* Buttons and small labels */
+.btn-primary-custom,
+.btn-secondary-custom {
+  align-items    : center;
+  border-radius  : 0.7rem;
+  display        : inline-flex;
+  font-size      : 0.92rem;
+  font-weight    : 800;
+  gap            : 0.5rem;
+  justify-content: center;
+  padding        : 0.75rem 1.15rem;
+  text-decoration: none;
+  transition     : background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn-primary-custom {
+  background: var(--coral);
+  border    : 1px solid var(--coral);
+  color     : #fff;
+}
+
+.btn-primary-custom:hover {
+  background  : var(--coral-dark);
+  border-color: var(--coral-dark);
+  box-shadow  : var(--shadow-small);
+  color       : #fff;
+  transform   : translateY(-2px);
+}
+
+.btn-secondary-custom {
+  background: transparent;
+  border    : 1px solid var(--line);
+  color     : var(--ink);
+}
+
+.btn-secondary-custom:hover {
+  background  : var(--surface);
+  border-color: var(--navy);
+  color       : var(--navy);
+  transform   : translateY(-2px);
+}
+
+.eyebrow {
+  align-items   : center;
+  color         : var(--teal);
+  display       : flex;
+  font-family   : var(--font-mono);
+  font-size     : 0.76rem;
+  font-weight   : 500;
+  gap           : 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  background: var(--teal);
+  content   : "";
+  height    : 1px;
+  width     : 1.8rem;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-soft {
+  background: var(--canvas-alt);
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 42rem;
+}
+
+.section-lead {
+  font-size: 1.04rem;
+  max-width: 41rem;
+}
+
+/* Homepage */
+.hero {
+  padding: clamp(0.5rem, 1vw, 8rem) 0 5.5rem;
+}
+
+.hero-title {
+  font-size  : clamp(2rem, 4vw, 5rem);
+  line-height: 1;
+  max-width  : 52rem;
+}
+
+.hero-title em {
+  color     : var(--coral);
+  font-style: normal;
+}
+
+.hero-copy {
+  font-size: 1.08rem;
+  max-width: 38rem;
+}
+
+.hero-portrait {
+  margin   : 0 auto;
+  max-width: 25rem;
+  padding  : 0 1rem 1.5rem;
+  position : relative;
+}
+
+.hero-portrait::before {
+  background   : var(--teal-soft);
+  border-radius: 50%;
+  content      : "";
+  inset        : 1rem 0 0 0;
+  position     : absolute;
+}
+
+.portrait-note {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: 0.8rem;
+  bottom       : 0;
+  box-shadow   : var(--shadow-small);
+  color        : var(--ink-soft);
+  font-size    : 0.78rem;
+  font-weight  : 800;
+  padding      : 0.72rem 0.9rem;
+  position     : absolute;
+  right        : -0.25rem;
+}
+
+.portrait-note i {
+  color       : var(--coral);
+  margin-right: 0.3rem;
+}
+
+.fact-list {
+  border-top           : 1px solid var(--line);
+  display              : grid;
+  gap                  : 0;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top           : 3.5rem;
+  max-width            : 42rem;
+}
+
+.fact {
+  border-right: 1px solid var(--line);
+  padding     : 1rem 1.1rem 0 0;
+}
+
+.fact+.fact {
+  padding-left: 1.1rem;
+}
+
+.fact:last-child {
+  border-right: 0;
+}
+
+.fact strong {
+  color         : var(--navy);
+  display       : block;
+  font-size     : 1.15rem;
+  letter-spacing: -0.03em;
+}
+
+.fact span {
+  color      : var(--muted);
+  display    : block;
+  font-size  : 0.78rem;
+  line-height: 1.4;
+  margin-top : 0.1rem;
+}
+
+.project-card {
+  background    : var(--surface);
+  border        : 1px solid var(--line);
+  border-radius : var(--radius);
+  display       : flex;
+  flex-direction: column;
+  height        : 100%;
+  overflow      : hidden;
+  transition    : box-shadow 180ms ease, transform 180ms ease;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow);
+  transform : translateY(-5px);
+}
+
+.project-card-visual {
+  align-items    : center;
+  background     : var(--teal-soft);
+  color          : var(--navy);
+  display        : flex;
+  font-size      : 2rem;
+  height         : 9rem;
+  justify-content: center;
+  overflow       : hidden;
+  position       : relative;
+}
+
+.project-card-visual::after {
+  border       : 1px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  border-radius: 50%;
+  content      : "";
+  height       : 8rem;
+  position     : absolute;
+  right        : -2rem;
+  top          : -3rem;
+  width        : 8rem;
+}
+
+.project-card-visual.coral {
+  background: var(--coral-soft);
+  color     : var(--coral);
+}
+
+.project-card-visual.navy {
+  background: color-mix(in srgb, var(--navy) 12%, var(--surface));
+  color     : var(--navy);
+}
+
+.project-card-body {
+  display       : flex;
+  flex          : 1;
+  flex-direction: column;
+  padding       : 1.55rem;
+}
+
+.project-meta {
+  color         : var(--teal);
+  font-family   : var(--font-mono);
+  font-size     : 0.7rem;
+  font-weight   : 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin   : 0.55rem 0 0.7rem;
+}
+
+.project-card p {
+  font-size: 0.92rem;
+}
+
+.text-link {
+  align-items    : center;
+  color          : var(--navy);
+  display        : inline-flex;
+  font-size      : 0.88rem;
+  font-weight    : 800;
+  gap            : 0.35rem;
+  margin-top     : auto;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: var(--coral-dark);
+}
+
+.quote-panel {
+  background   : var(--navy);
+  border-radius: var(--radius);
+  color        : #fff;
+  overflow     : hidden;
+  padding      : clamp(2rem, 5vw, 4rem);
+  position     : relative;
+}
+
+.quote-panel::after {
+  border       : 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  content      : "";
+  height       : 18rem;
+  position     : absolute;
+  right        : -7rem;
+  top          : -8rem;
+  width        : 18rem;
+}
+
+.quote-panel p {
+  color         : #fff;
+  font-size     : clamp(1.5rem, 3.4vw, 2.4rem);
+  font-weight   : 800;
+  letter-spacing: -0.04em;
+  line-height   : 1.25;
+  max-width     : 45rem;
+  position      : relative;
+  z-index       : 1;
+}
+
+.quote-panel .eyebrow {
+  color   : #b9e3dc;
+  position: relative;
+  z-index : 1;
+}
+
+.quote-panel .eyebrow::before {
+  background: #b9e3dc;
+}
+
+/* Page headers */
+.page-intro {
+  border-bottom: 1px solid var(--line);
+  padding      : 5.2rem 0 3.5rem;
+}
+
+.page-intro h1 {
+  font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+  max-width: 46rem;
+}
+
+.page-intro p {
+  font-size: 1.08rem;
+  max-width: 39rem;
+}
+
+/* About */
+.about-image {
+  border-radius  : var(--radius);
+  box-shadow     : var(--shadow);
+  display        : block;
+  height         : 31rem;
+  object-fit     : cover;
+  object-position: center top;
+  width          : 100%;
+}
+
+.note-card {
+  background   : var(--surface);
+  border-left  : 4px solid var(--coral);
+  border-radius: 0 0.75rem 0.75rem 0;
+  color        : var(--ink-soft);
+  font-size    : 0.92rem;
+  margin-top   : 1.5rem;
+  padding      : 1rem 1.2rem;
+}
+
+.tag-list {
+  display   : flex;
+  flex-wrap : wrap;
+  gap       : 0.55rem;
+  list-style: none;
+  margin    : 0;
+  padding   : 0;
+}
+
+.tag {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: 999px;
+  color        : var(--ink-soft);
+  font-size    : 0.82rem;
+  font-weight  : 700;
+  padding      : 0.45rem 0.75rem;
+}
+
+.skill-block {
+  border-top: 1px solid var(--line);
+  padding   : 1.35rem 0;
+}
+
+.skill-block:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-block h3 {
+  font-size     : 1rem;
+  letter-spacing: -0.02em;
+  margin-bottom : 0.75rem;
+}
+
+.skill-block h3 i {
+  color       : var(--teal);
+  margin-right: 0.35rem;
+}
+
+.timeline {
+  border-left : 1px solid var(--line);
+  margin-left : 0.35rem;
+  padding-left: 1.75rem;
+}
+
+.timeline-item {
+  padding-bottom: 2.2rem;
+  position      : relative;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  background   : var(--coral);
+  border       : 4px solid var(--canvas);
+  border-radius: 50%;
+  content      : "";
+  height       : 0.9rem;
+  left         : -2.22rem;
+  position     : absolute;
+  top          : 0.22rem;
+  width        : 0.9rem;
+}
+
+.timeline-date {
+  color      : var(--teal);
+  font-family: var(--font-mono);
+  font-size  : 0.75rem;
+  font-weight: 500;
+}
+
+.timeline-item h3 {
+  font-size: 1.17rem;
+  margin   : 0.25rem 0;
+}
+
+/* Projects page */
+.project-feature {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow     : hidden;
+}
+
+.project-feature-image {
+  height    : 15rem;
+  object-fit: cover;
+  width     : 100%;
+}
+
+.project-feature-body {
+  padding: 1.65rem;
+}
+
+.project-feature-body h2 {
+  font-size: 1.55rem;
+}
+
+.tech-list {
+  color         : var(--muted);
+  font-family   : var(--font-mono);
+  font-size     : 0.72rem;
+  letter-spacing: 0.02em;
+  margin-bottom : 0.8rem;
+}
+
+.filter-group {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 0.5rem;
+}
+
+.filter-button {
+  background   : transparent;
+  border       : 1px solid var(--line);
+  border-radius: 999px;
+  color        : var(--ink-soft);
+  cursor       : pointer;
+  font-size    : 0.83rem;
+  font-weight  : 800;
+  padding      : 0.45rem 0.85rem;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background  : var(--navy);
+  border-color: var(--navy);
+  color       : #fff;
+}
+
+.project-item.is-hidden {
+  display: none;
+}
+
+/* Contact */
+.contact-card {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: var(--radius);
+  height       : 100%;
+  padding      : 2rem;
+}
+
+.contact-icon {
+  align-items    : center;
+  background     : var(--teal-soft);
+  border-radius  : 0.7rem;
+  color          : var(--teal);
+  display        : inline-flex;
+  font-size      : 1.2rem;
+  height         : 2.7rem;
+  justify-content: center;
+  width          : 2.7rem;
+}
+
+.contact-card h2 {
+  font-size: 1.35rem;
+  margin   : 1rem 0 0.5rem;
+}
+
+.contact-card a {
+  font-weight  : 800;
+  overflow-wrap: anywhere;
+}
+
+.form-label {
+  color      : var(--ink);
+  font-size  : 0.88rem;
+  font-weight: 800;
+}
+
+.form-control {
+  background   : var(--canvas);
+  border-color : var(--line);
+  border-radius: 0.7rem;
+  color        : var(--ink);
+  padding      : 0.75rem 0.9rem;
+}
+
+.form-control:focus {
+  background  : var(--surface);
+  border-color: var(--teal);
+  box-shadow  : 0 0 0 0.22rem color-mix(in srgb, var(--teal) 18%, transparent);
+  color       : var(--ink);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+}
+
+.contact-form {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: var(--radius);
+  padding      : clamp(1.4rem, 4vw, 2.5rem);
+}
+
+.form-success {
+  background   : var(--teal-soft);
+  border-radius: 0.7rem;
+  color        : var(--ink);
+  display      : none;
+  font-size    : 0.9rem;
+  margin-top   : 1rem;
+  padding      : 0.85rem 1rem;
+}
+
+.form-success.is-visible {
+  display: block;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding   : 2.5rem 0;
+}
+
+.footer-note {
+  color    : var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display        : flex;
+  gap            : 1.1rem;
+  justify-content: flex-end;
+}
+
+.footer-links a {
+  color    : var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--coral-dark);
+}
+
+/* Motion is additive only: everything remains usable without JavaScript. */
+[data-reveal] {
+  opacity   : 0;
+  transform : translateY(1rem);
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity  : 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background   : var(--surface);
+    border       : 1px solid var(--line);
+    border-radius: 0.9rem;
+    box-shadow   : var(--shadow-small);
+    margin-top   : 0.65rem;
+    padding      : 0.65rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link.active {
+    background   : var(--canvas-alt);
+    border-radius: 0.5rem;
+  }
+
+  .theme-toggle {
+    margin: 0.55rem 0.2rem 0.2rem;
+  }
+
+
+  .footer-links {
+    justify-content: flex-start;
+    margin-top     : 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section {
+    padding: 4.25rem 0;
+  }
+
+  .hero {
+    padding-bottom: 4.25rem;
+    padding-top   : 3.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.55rem, 12.5vw, 3.5rem);
+  }
+
+  .fact-list {
+    gap                  : 0.7rem;
+    grid-template-columns: 1fr;
+    margin-top           : 2.5rem;
+    padding-top          : 0.2rem;
+  }
+
+  .fact,
+  .fact+.fact {
+    border-right : 0;
+    border-bottom: 1px solid var(--line);
+    padding      : 0.7rem 0;
+  }
+
+  .fact:last-child {
+    border-bottom: 0;
+  }
+
+  .page-intro {
+    padding: 3.7rem 0 2.6rem;
+  }
+
+  .about-image {
+    height: 25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior    : auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity  : 1;
+    transform: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   GitHub-inspired repository view
+   -------------------------------------------------------------------------
+   These overrides intentionally use semantic names from the rest of this
+   stylesheet. The portfolio feels code-first without copying GitHub's UI.
+*/
+:root {
+  --canvas       : #ffffff;
+  --canvas-alt   : #f6f8fa;
+  --surface      : #ffffff;
+  --surface-muted: #f6f8fa;
+  --ink          : #1f2328;
+  --ink-soft     : #57606a;
+  --muted        : #6e7781;
+  --line         : #d0d7de;
+  --navy         : #0969da;
+  --navy-deep    : #0550ae;
+  --teal         : #1a7f37;
+  --teal-soft    : #dafbe1;
+  --coral        : #1f883d;
+  --coral-dark   : #1a7f37;
+  --coral-soft   : #dafbe1;
+  --shadow       : 0 8px 24px rgba(140, 149, 159, 0.2);
+  --shadow-small : 0 3px 8px rgba(140, 149, 159, 0.2);
+  --radius       : 0.75rem;
+}
+
+[data-theme="dark"] {
+  --canvas       : #0d1117;
+  --canvas-alt   : #161b22;
+  --surface      : #161b22;
+  --surface-muted: #21262d;
+  --ink          : #f0f6fc;
+  --ink-soft     : #c9d1d9;
+  --muted        : #8b949e;
+  --line         : #30363d;
+  --navy         : #58a6ff;
+  --navy-deep    : #79c0ff;
+  --teal         : #3fb950;
+  --teal-soft    : #12261e;
+  --coral        : #238636;
+  --coral-dark   : #2ea043;
+  --coral-soft   : #1b3a2a;
+  --shadow       : 0 8px 24px rgba(1, 4, 9, 0.45);
+  --shadow-small : 0 3px 8px rgba(1, 4, 9, 0.35);
+}
+
+.hero-portrait {
+  max-width: 21rem;
+  padding  : 0;
+}
+
+.hero-portrait::before {
+  border-radius: 50%;
+  inset        : 0;
+}
+
+
+.portrait-note {
+  bottom: 0.6rem;
+  right : -1.2rem;
+}
+
+.about-image {
+  aspect-ratio   : 1;
+  border         : 0.5rem solid var(--surface);
+  border-radius  : 50%;
+  height         : auto;
+  margin         : 0 auto;
+  max-width      : 22rem;
+  object-position: center top;
+}
+
+.github-projects {
+  overflow: hidden;
+}
+
+.repo-kicker {
+  align-items: center;
+  color      : var(--teal);
+  display    : inline-flex;
+  font-family: var(--font-mono);
+  font-size  : 0.75rem;
+  font-weight: 500;
+  gap        : 0.45rem;
+}
+
+.repo-kicker i {
+  font-size: 1rem;
+}
+
+.repo-shell {
+  background   : var(--surface);
+  border       : 1px solid var(--line);
+  border-radius: 0.7rem;
+  box-shadow   : var(--shadow-small);
+  color        : var(--ink);
+  font-size    : 0.82rem;
+  overflow     : hidden;
+}
+
+.repo-shell-header {
+  align-items    : center;
+  border-bottom  : 1px solid var(--line);
+  display        : flex;
+  font-family    : var(--font-mono);
+  gap            : 0.55rem;
+  justify-content: space-between;
+  padding        : 0.95rem 1rem;
+}
+
+.repo-name {
+  color      : var(--navy);
+  font-weight: 500;
+}
+
+.repo-name i {
+  color       : var(--ink-soft);
+  margin-right: 0.35rem;
+}
+
+.repo-visibility {
+  border       : 1px solid var(--line);
+  border-radius: 999px;
+  color        : var(--ink-soft);
+  font-size    : 0.68rem;
+  padding      : 0.16rem 0.5rem;
+}
+
+.repo-tabs {
+  border-bottom: 1px solid var(--line);
+  display      : flex;
+  gap          : 1rem;
+  overflow-x   : auto;
+  padding      : 0 1rem;
+}
+
+.repo-tab {
+  border-bottom: 2px solid transparent;
+  color        : var(--ink-soft);
+  font-size    : 0.77rem;
+  padding      : 0.7rem 0.1rem 0.55rem;
+  white-space  : nowrap;
+}
+
+.repo-tab.active {
+  border-bottom-color: #fd8c73;
+  color              : var(--ink);
+  font-weight        : 700;
+}
+
+.repo-code-view {
+  display              : grid;
+  grid-template-columns: 9.8rem minmax(0, 1fr);
+  min-height           : 16rem;
+}
+
+.repo-tree {
+  background  : var(--canvas-alt);
+  border-right: 1px solid var(--line);
+  color       : var(--ink-soft);
+  font-family : var(--font-mono);
+  font-size   : 0.7rem;
+  padding     : 0.9rem 0.75rem;
+}
+
+.repo-tree-title {
+  color         : var(--muted);
+  font-size     : 0.64rem;
+  letter-spacing: 0.05em;
+  margin-bottom : 0.65rem;
+  text-transform: uppercase;
+}
+
+.repo-tree-row {
+  align-items: center;
+  display    : flex;
+  gap        : 0.38rem;
+  padding    : 0.26rem 0.22rem;
+}
+
+.repo-tree-row.active {
+  background   : var(--teal-soft);
+  border-radius: 0.3rem;
+  color        : var(--ink);
+}
+
+.repo-tree-row i {
+  color    : var(--navy);
+  font-size: 0.76rem;
+}
+
+.code-preview {
+  background: var(--surface);
+  min-width : 0;
+}
+
+.code-file-label {
+  border-bottom: 1px solid var(--line);
+  color        : var(--ink-soft);
+  font-family  : var(--font-mono);
+  font-size    : 0.7rem;
+  padding      : 0.75rem 1rem;
+}
+
+.code-sample {
+  color      : var(--ink-soft);
+  font-family: var(--font-mono);
+  font-size  : clamp(0.67rem, 1.5vw, 0.78rem);
+  line-height: 1.8;
+  margin     : 0;
+  overflow-x : auto;
+  padding    : 0.9rem 0;
+  tab-size   : 2;
+}
+
+.code-line {
+  display    : block;
+  padding    : 0 1rem 0 3.7rem;
+  position   : relative;
+  white-space: pre;
+}
+
+.code-line::before {
+  color     : var(--muted);
+  content   : attr(data-line);
+  left      : 0;
+  position  : absolute;
+  text-align: right;
+  width     : 2.6rem;
+}
+
+.code-comment {
+  color: var(--muted);
+}
+
+.code-keyword {
+  color: #cf222e;
+}
+
+.code-function {
+  color: #8250df;
+}
+
+.code-string {
+  color: #0a3069;
+}
+
+[data-theme="dark"] .code-keyword {
+  color: #ff7b72;
+}
+
+[data-theme="dark"] .code-function {
+  color: #d2a8ff;
+}
+
+[data-theme="dark"] .code-string {
+  color: #a5d6ff;
+}
+
+.repo-footer {
+  align-items: center;
+  background : var(--canvas-alt);
+  border-top : 1px solid var(--line);
+  color      : var(--ink-soft);
+  display    : flex;
+  flex-wrap  : wrap;
+  font-family: var(--font-mono);
+  font-size  : 0.68rem;
+  gap        : 1rem;
+  padding    : 0.7rem 1rem;
+}
+
+.repo-language {
+  align-items: center;
+  display    : inline-flex;
+  gap        : 0.35rem;
+}
+
+.repo-language::before {
+  background   : #3572a5;
+  border-radius: 50%;
+  content      : "";
+  height       : 0.6rem;
+  width        : 0.6rem;
+}
+
+.repo-language.green::before {
+  background: #2da44e;
+}
+
+.repo-language.purple::before {
+  background: #8250df;
+}
+
+.repo-card {
+  background    : var(--surface);
+  border        : 1px solid var(--line);
+  border-radius : 0.7rem;
+  display       : flex;
+  flex-direction: column;
+  height        : 100%;
+  padding       : 1.3rem;
+  transition    : border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.repo-card:hover {
+  border-color: var(--navy);
+  box-shadow  : var(--shadow-small);
+  transform   : translateY(-3px);
+}
+
+.repo-card h2 {
+  font-size: 1.2rem;
+  margin   : 0.75rem 0 0.6rem;
+}
+
+.repo-card p {
+  font-size: 0.9rem;
+}
+
+.repo-card .tag-list {
+  margin-top : auto;
+  padding-top: 1rem;
+}
+
+.repo-card-footer {
+  border-top : 1px solid var(--line);
+  color      : var(--muted);
+  display    : flex;
+  font-family: var(--font-mono);
+  font-size  : 0.68rem;
+  gap        : 1rem;
+  margin-top : 1rem;
+  padding-top: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+
+  .hero-portrait {
+    max-width: 17rem;
+  }
+
+
+  .portrait-note {
+    right: -0.2rem;
+  }
+
+  .repo-code-view {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-tree {
+    border-bottom        : 1px solid var(--line);
+    border-right         : 0;
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .repo-tree-title {
+    grid-column: 1 / -1;
+  }
+
+  .repo-tree-row {
+    font-size: 0.64rem;
+  }
+
+}
