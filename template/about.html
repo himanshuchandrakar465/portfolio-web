@@ -1,320 +1,432 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="About Himanshu Chandrakar, an aspiring AI/ML engineer with foundations in machine learning, deep learning, and generative AI."
+    />
+    <title>About | Himanshu Chandrakar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/portfolio.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/my_css.css' %}" rel="stylesheet" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="About Himanshu Chandrakar, an aspiring AI/ML engineer with foundations in machine learning, deep learning, and generative AI." />
-  <title>About | Himanshu Chandrakar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link href="{% static 'css/portfolio.css' %}" rel="stylesheet" />
-  <link href="{% static 'css/my_css.css' %}" rel="stylesheet" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("portfolio-theme");
+        document.documentElement.dataset.theme =
+          saved ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+      })();
+    </script>
+  </head>
 
-  <script>
-    (function () {
-      var saved = localStorage.getItem("portfolio-theme");
-      document.documentElement.dataset.theme =
-        saved ||
-        (matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light");
-    })();
-  </script>
-</head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container">
+          <a
+            class="brand"
+            href="{% url 'index' %}"
+            aria-label="Himanshu Chandrakar home"
+            ><span class="brand-mark" aria-hidden="true">HC</span> Himanshu
+            Chandrakar</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#siteNavigation"
+            aria-controls="siteNavigation"
+            aria-expanded="false"
+            aria-label="Open navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="siteNavigation"
+          >
+            <ul class="navbar-nav align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{% url 'about' %}"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              </li>
+              <li class="nav-item ms-lg-2">
+                <button
+                  class="theme-toggle"
+                  type="button"
+                  data-theme-toggle
+                  aria-pressed="false"
+                  aria-label="Switch to dark mode"
+                >
+                  <i class="bi bi-moon-stars-fill" aria-hidden="true"></i
+                  ><span>Dark</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-<body>
-  <header class="site-header">
-    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
-      <div class="container">
-        <a class="brand" href="{% url 'index' %}" aria-label="Himanshu Chandrakar home"><span class="brand-mark"
-            aria-hidden="true">HC</span> Himanshu
-          Chandrakar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavigation"
-          aria-controls="siteNavigation" aria-expanded="false" aria-label="Open navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="siteNavigation">
-          <ul class="navbar-nav align-items-lg-center">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'projects' %}">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
-            <li class="nav-item ms-lg-2">
-              <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"
-                aria-label="Switch to dark mode">
-                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i><span>Dark</span>
-              </button>
-            </li>
-          </ul>
+    <main>
+      <section class="page-intro">
+        <div class="container">
+          <div class="eyebrow">About me</div>
+          <h1 class="mt-3">Building AI by understanding how it works.</h1>
+          <p class="mt-3 mb-0">
+            I’m Himanshu Chandrakar, an aspiring AI/ML engineer interested in
+            machine learning, deep learning, and generative AI. I enjoy turning
+            what I learn into practical projects and applications.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-5" data-reveal>
+              <img
+                class="about-image"
+                src="{% static 'images/wallpaperflare.com_wallpaper.jpg' %}"
+                alt="Himanshu Chandrakar"
+              />
+            </div>
+            <div class="col-lg-6 offset-lg-1" data-reveal>
+              <div class="eyebrow">A practical learner</div>
+              <h2 class="section-heading mt-3">From learning to building.</h2>
+              <p class="mt-3">
+                I focus on understanding the fundamentals behind AI and applying
+                them through hands-on projects. My interests include deep
+                learning, computer vision, LLM applications, RAG, and AI agents.
+                I enjoy working through the complete process — from
+                understanding the data and training models to building something
+                people can actually use.
+              </p>
+              <p>
+                What keeps me engaged is the full path: understanding the data,
+                selecting an approach, evaluating it carefully, and making the
+                result easy to use. I’m particularly interested in scalable AI
+                systems that are grounded in a clear user need.
+              </p>
+              <div class="note-card">
+                <i class="bi bi-lightbulb-fill me-2" aria-hidden="true"></i>I
+                learn best by building, experimenting, and improving with every
+                project.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <div class="eyebrow">Tools I work with</div>
+              <h2 class="section-heading mt-3">A focused technical toolkit.</h2>
+              <p class="section-lead mt-3">
+                The goal is not to collect tools; it is to use the right ones to
+                understand data, build models, and deliver a useful workflow.
+              </p>
+            </div>
+            <div class="col-lg-6 offset-lg-1" data-reveal>
+              <div class="skill-block">
+                <h3>
+                  <i class="bi bi-code-slash" aria-hidden="true"></i>Core
+                  development
+                </h3>
+                <ul class="tag-list">
+                  <li class="tag hovering">
+                    <a href="https://www.python.org/about/" target="_blank"
+                      >Python</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://www.w3schools.com/sql/" target="_blank"
+                      >SQL</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://isocpp.org/" target="_blank">C++</a>
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://git-scm.com/" target="_blank">Git</a>
+                  </li>
+                  <li class="tag hovering">
+                    <a href="https://github.com/about" target="_blank"
+                      >Git Hub</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://www.docker.com/" target="_blank">Docker</a>
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://jupyter.org/" target="_blank">Jupyter</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h3>
+                  <i class="bi bi-cpu" aria-hidden="true"></i>Machine &amp; deep
+                  learning
+                </h3>
+                <ul class="tag-list">
+                  <li class="tag hovering">
+                    <a href="https://pytorch.org/" target="_blank">PyTorch</a>
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://www.tensorflow.org/" target="_blank"
+                      >TensorFlow</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://keras.io/" target="_blank">Keras</a>
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://scikit-learn.org/" target="_blank"
+                      >Scikit-learn</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://www.ibm.com/think/topics/natural-language-processing"
+                      target="_blank"
+                      >NLP</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://www.tensorflow.org/tutorials/images/cnn"
+                      target="_blank"
+                      >Image processing with CNN</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h3>
+                  <i class="bi bi-chat-square-text" aria-hidden="true"></i
+                  >Agentic AI
+                </h3>
+                <ul class="tag-list">
+                  <li class="tag hovering">
+                    <a href="https://www.langchain.com/" target="_blank"
+                      >LangChain</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://www.langchain.com/langgraph"
+                      target="_blank"
+                      >LangGraph</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://huggingface.co/" target="_blank"
+                      >Hugging Face</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://aws.amazon.com/what-is/retrieval-augmented-generation/"
+                      target="_blank"
+                      >RAG</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://www.langchain.com/agents" target="_blank"
+                      >LLM applications</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a href="https://smith.langchain.com/" target="_blank"
+                      >LangSmith</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h3>
+                  <i class="bi bi-bar-chart" aria-hidden="true"></i>Foundations
+                </h3>
+                <ul class="tag-list">
+                  <li class="tag hovering">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Data_structure"
+                      target="_blank"
+                      >Data structures</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Object-oriented_programming"
+                      target="_blank"
+                      >OOP</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Linear_algebra"
+                      target="_blank"
+                      >Linear algebra</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Probability"
+                      target="_blank"
+                      >Probability</a
+                    >
+                  </li>
+
+                  <li class="tag hovering">
+                    <a
+                      href="https://en.wikipedia.org/wiki/Statistics"
+                      target="_blank"
+                      >Statistics</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <div class="eyebrow">Education &amp; achievement</div>
+              <h2 class="section-heading mt-3">
+                The milestones that shaped the starting point.
+              </h2>
+            </div>
+            <div class="col-lg-6 offset-lg-1" data-reveal>
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-date">2021 — 2025</div>
+                  <h3>Bachelor of Engineering, Computer Science</h3>
+                  <p class="mb-0">
+                    Bhilai Institute of Technology (BIT), Raipur
+                  </p>
+                </article>
+                <article class="timeline-item">
+                  <div class="timeline-date">2025</div>
+                  <h3>GATE, Data Science &amp; Artificial Intelligence</h3>
+                  <p class="mb-0">All India Rank: 14,076</p>
+                </article>
+                <article class="timeline-item">
+                  <div class="timeline-date">Continuous learning</div>
+                  <h3 class="cer_link">
+                    <a
+                      href="{% static 'cer_dir/UC-3c831323-4194-4320-9a4a-4c90e8fe215e.pdf' %}"
+                      >Machine learning</a
+                    >,<a
+                      href="{% static 'cer_dir/UC-03abcee2-111a-4d76-875d-8ea0c0abfa76.pdf' %}"
+                    >
+                      TensorFlow</a
+                    >
+                    &amp;<a
+                      href="{% static 'cer_dir/UC-1ca9818f-717a-4351-b40e-56b1e1c340b8.pdf' %}"
+                    >
+                      PyTorch</a
+                    >
+                  </h3>
+                  <p class="mb-0">
+                    Focused self-study and certifications alongside
+                    project-based learning.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div
+        class="container d-md-flex justify-content-between align-items-center"
+      >
+        <div>
+          <a class="brand" href="{% url 'index' %}"
+            ><span class="brand-mark" aria-hidden="true">HC</span> Himanshu
+            Chandrakar</a
+          >
+          <p class="footer-note mb-0 mt-2">
+            AI/ML engineering · Generative AI · Deep learning
+          </p>
+        </div>
+        <div class="footer-links">
+          <a
+            href="https://github.com/himanshuchandrakar465"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            ><i class="bi bi-github" aria-hidden="true"></i></a
+          ><a
+            href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><i class="bi bi-linkedin" aria-hidden="true"></i></a
+          ><a href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"
+            ><i class="bi bi-envelope" aria-hidden="true"></i
+          ></a>
         </div>
       </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="page-intro">
       <div class="container">
-        <div class="eyebrow">About me</div>
-        <h1 class="mt-3">Building AI by understanding how it works.</h1>
-        <p class="mt-3 mb-0">
-          I’m Himanshu Chandrakar, an aspiring AI/ML engineer interested in
-          machine learning, deep learning, and generative AI. I enjoy turning
-          what I learn into practical projects and applications.
+        <p class="footer-note mb-0 mt-3">
+          © <span data-current-year></span> Himanshu Chandrakar.
         </p>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="row align-items-center gy-5">
-          <div class="col-lg-5" data-reveal>
-            <img class="about-image" src="{% static 'images/' %}" alt="Himanshu Chandrakar" />
-          </div>
-          <div class="col-lg-6 offset-lg-1" data-reveal>
-            <div class="eyebrow">A practical learner</div>
-            <h2 class="section-heading mt-3">From learning to building.</h2>
-            <p class="mt-3">
-              I focus on understanding the fundamentals behind AI and applying
-              them through hands-on projects. My interests include deep
-              learning, computer vision, LLM applications, RAG, and AI agents.
-              I enjoy working through the complete process — from
-              understanding the data and training models to building something
-              people can actually use.
-            </p>
-            <p>
-              What keeps me engaged is the full path: understanding the data,
-              selecting an approach, evaluating it carefully, and making the
-              result easy to use. I’m particularly interested in scalable AI
-              systems that are grounded in a clear user need.
-            </p>
-            <div class="note-card">
-              <i class="bi bi-lightbulb-fill me-2" aria-hidden="true"></i>I
-              learn best by building, experimenting, and improving with every
-              project.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <div class="eyebrow">Tools I work with</div>
-            <h2 class="section-heading mt-3">A focused technical toolkit.</h2>
-            <p class="section-lead mt-3">
-              The goal is not to collect tools; it is to use the right ones to
-              understand data, build models, and deliver a useful workflow.
-            </p>
-          </div>
-          <div class="col-lg-6 offset-lg-1" data-reveal>
-            <div class="skill-block">
-              <h3>
-                <i class="bi bi-code-slash" aria-hidden="true"></i>Core
-                development
-              </h3>
-              <ul class="tag-list">
-                <li class="tag hovering">
-                  <a href="https://www.python.org/about/" target="_blank">Python</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.w3schools.com/sql/" target="_blank">SQL</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://isocpp.org/" target="_blank">C++</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://git-scm.com/" target="_blank">Git</a>
-                </li>
-                <li class="tag hovering">
-                  <a href="https://github.com/about" target="_blank">Git Hub</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.docker.com/" target="_blank">Docker</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://jupyter.org/" target="_blank">Jupyter</a>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-block">
-              <h3>
-                <i class="bi bi-cpu" aria-hidden="true"></i>Machine &amp; deep
-                learning
-              </h3>
-              <ul class="tag-list">
-                <li class="tag hovering">
-                  <a href="https://pytorch.org/" target="_blank">PyTorch</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://keras.io/" target="_blank">Keras</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://scikit-learn.org/" target="_blank">Scikit-learn</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.ibm.com/think/topics/natural-language-processing" target="_blank">NLP</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.tensorflow.org/tutorials/images/cnn" target="_blank">Image processing with
-                    CNN</a>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-block">
-              <h3>
-                <i class="bi bi-chat-square-text" aria-hidden="true"></i>Agentic AI
-              </h3>
-              <ul class="tag-list">
-                <li class="tag hovering">
-                  <a href="https://www.langchain.com/" target="_blank">LangChain</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.langchain.com/langgraph" target="_blank">LangGraph</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://huggingface.co/" target="_blank">Hugging Face</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://aws.amazon.com/what-is/retrieval-augmented-generation/" target="_blank">RAG</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://www.langchain.com/agents" target="_blank">LLM applications</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://smith.langchain.com/" target="_blank">LangSmith</a>
-                </li>
-              </ul>
-            </div>
-            <div class="skill-block">
-              <h3>
-                <i class="bi bi-bar-chart" aria-hidden="true"></i>Foundations
-              </h3>
-              <ul class="tag-list">
-                <li class="tag hovering">
-                  <a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank">Data structures</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">OOP</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://en.wikipedia.org/wiki/Linear_algebra" target="_blank">Linear algebra</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://en.wikipedia.org/wiki/Probability" target="_blank">Probability</a>
-                </li>
-
-                <li class="tag hovering">
-                  <a href="https://en.wikipedia.org/wiki/Statistics" target="_blank">Statistics</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5">
-            <div class="eyebrow">Education &amp; achievement</div>
-            <h2 class="section-heading mt-3">
-              The milestones that shaped the starting point.
-            </h2>
-          </div>
-          <div class="col-lg-6 offset-lg-1" data-reveal>
-            <div class="timeline">
-              <article class="timeline-item">
-                <div class="timeline-date">2021 — 2025</div>
-                <h3>Bachelor of Engineering, Computer Science</h3>
-                <p class="mb-0">
-                  Bhilai Institute of Technology (BIT), Raipur
-                </p>
-              </article>
-              <article class="timeline-item">
-                <div class="timeline-date">2025</div>
-                <h3>GATE, Data Science &amp; Artificial Intelligence</h3>
-                <p class="mb-0">All India Rank: 14,076</p>
-              </article>
-              <article class="timeline-item">
-                <div class="timeline-date">Continuous learning</div>
-                <h3 class="cer_link"><a
-                    href="{% static 'cer_dir/UC-3c831323-4194-4320-9a4a-4c90e8fe215e.pdf' %}">Machine learning</a>,<a
-                    href="{% static 'cer_dir/UC-03abcee2-111a-4d76-875d-8ea0c0abfa76.pdf' %}">
-                    TensorFlow</a> &amp;<a href="{% static 'cer_dir/UC-1ca9818f-717a-4351-b40e-56b1e1c340b8.pdf' %}">
-                    PyTorch</a> </h3>
-                <p class="mb-0">
-                  Focused self-study and certifications alongside
-                  project-based learning.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container d-md-flex justify-content-between align-items-center">
-      <div>
-        <a class="brand" href="{% url 'index' %}"><span class="brand-mark" aria-hidden="true">HC</span> Himanshu
-          Chandrakar</a>
-        <p class="footer-note mb-0 mt-2">
-          AI/ML engineering · Generative AI · Deep learning
-        </p>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/himanshuchandrakar465" target="_blank" rel="noopener noreferrer"
-          aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a><a
-          href="https://www.linkedin.com/in/himanshu-chandrakar-a7b48b222/" target="_blank" rel="noopener noreferrer"
-          aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a><a
-          href="mailto:himanshuchandrakar465@gmail.com" aria-label="Email"><i class="bi bi-envelope"
-            aria-hidden="true"></i></a>
-      </div>
-    </div>
-    <div class="container">
-      <p class="footer-note mb-0 mt-3">
-        © <span data-current-year></span> Himanshu Chandrakar.
-      </p>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="{% static 'js/portfolio.js' %}"></script>
-</body>
-
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/portfolio.js' %}"></script>
+  </body>
 </html>
