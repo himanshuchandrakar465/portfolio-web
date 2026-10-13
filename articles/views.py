@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Message
 
 
 def index(request):
@@ -16,3 +17,15 @@ def contact(request):
 
 def projects(request):
     return render(request, "projects.html")
+
+
+def contact(request):
+    if request.method == "POST":
+        Message.objects.create(
+            name=request.POST["name"],
+            email=request.POST["email"],
+            subject=request.POST.get("subject", ""),
+            message=request.POST["message"],
+        )
+        return redirect("contact")
+    return render(request, "contact.html")

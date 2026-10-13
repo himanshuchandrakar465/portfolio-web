@@ -99,27 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // The form prepares an email in the visitor's mail client. No message data is
   // silently sent to a third-party service.
   var form = document.querySelector("[data-contact-form]");
-  if (form) {
-    form.addEventListener("submit", function (event) {
+if (form) {
+  form.addEventListener("submit", function (event) {
+    if (!form.checkValidity()) {
       event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.classList.add("was-validated");
-        return;
-      }
-
-      var name = form.elements.name.value.trim();
-      var email = form.elements.email.value.trim();
-      var subject = form.elements.subject.value.trim() || "Portfolio enquiry";
-      var message = form.elements.message.value.trim();
-      var body = message + "\n\nFrom: " + name + "\nReply to: " + email;
-      var mailto = "mailto:himanshuchandrakar465@gmail.com?subject="
-        + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-      window.location.href = mailto;
-      document.querySelector("[data-form-success]").classList.add("is-visible");
-    });
-  }
+      form.classList.add("was-validated");
+    }
+  });
+}
 
   document.querySelectorAll("[data-current-year]").forEach(function (year) {
     year.textContent = new Date().getFullYear();
